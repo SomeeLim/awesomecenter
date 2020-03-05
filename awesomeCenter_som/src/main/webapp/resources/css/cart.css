@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+#cart_body {
+   font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+}
+
+#cartContainer {
+	margin: 0 auto !important;
+}
+
+#pay_nvar div {
+     
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 12px 0;
+    color : #666;
+    font-weight: 400;
+ 
+}
+
+#cart_h2 h2 {
+   
+      font-weight: 500;
+      font-size: 52px;
+      margin-bottom: 70px;
+      letter-spacing: -3px;
+      font-family: "Noto Sans Kr";   
+}
+
+#cartTable {
+	margin: 0 auto !important;
+}
+
+#cartTable table { 
+    width : 70%;
+    margin: 0 auto !important;
+    border-collapse: collapse !important;
+}
+
+#cartTable table tr th{
+	border-top: black 1px solid;
+    font-size: 16px;
+    color: #222;
+    text-align: center;
+    padding: 11px 5px 10px 5px;
+    background-color: #f4f4f4;
+    height: 66px;
+    font-weight: normal;
+}
+
+.cartTbodyTR td{
+   
+    text-align: center;
+    padding: 11px 5px 10px 5px;
+    height: 150px;
+    color: #666;
+    border-bottom: rgb(229, 229, 229) 1px solid;
+ 
+}
+
+#cartTfoot td {
+	border-bottom: rgb(204, 204, 204) 1px solid;
+    font-size: 16px;
+    color: #222;
+    text-align: center;
+    padding: 11px 5px 10px 5px;
+    background-color: #f4f4f4;
+    height: 66px;
+    font-weight: normal;
+}
+
+.cartTbodyImg {
+	float: center;
+	width: 110px;
+	height: 110px;
+	
+}
+
+.cartTbodyInfo {
+	text-align: left !important; 
+}
+
+.deleteLecture {
+	width: 110px;
+	text-align: center;
+	background-color: white;
+	font-size: 10pt;
+	padding: 5px 10px;
+	border: rgb(170, 170, 170) 1px solid;
+	cursor: pointer;
+}
+
+#cartMoreLecture {
+	float: left;
+	margin-left:985px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	display: inline-block;
+	border: rgb(170, 170, 170) 1px solid;
+	padding: 18px 30px;
+	font-size: 13pt;
+	text-align: center;
+	width: 170px;
+	cursor: pointer;
+}
+
+#cartGoPayment {
+	margin-left: 15px;
+	margin-top: 20px;
+	margin-bottom: 50px;
+	display: inline-block;
+	background-color: rgb(233, 43, 51);
+	color: white;
+	padding: 18px 30px;
+	font-size: 13pt;
+	text-align: center;
+	width: 170px;
+	cursor: pointer;
+}
+
+#cartMoreLecture a {
+	text-decoration: none !important;
+	color: black;
+}
+
+#cartMoreLecture a:hover {
+	text-decoration: none;
+	color: black;
+}

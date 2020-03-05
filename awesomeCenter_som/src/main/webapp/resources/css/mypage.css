@@ -1,0 +1,376 @@
+@charset "UTF-8";
+
+#content_kdh h2 {
+    font-size: 52px;
+    color: #000;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.memberModify_kdh .name_kdh {
+    margin-bottom: 60px!important;
+}
+
+h2.name_kdh {
+    text-align: left !important;
+}
+
+.memberModify_kdh .changeDay_kdh {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* 내 정보 */
+
+.myInfo_kdh {
+    overflow: hidden;
+}
+
+.myInfo_kdh .leftArea_kdh {
+    float: left;
+    width: 550px;
+    border-top: 1px solid #000;
+}
+
+.myInfo_kdh .leftArea_kdh dl {
+    overflow: hidden;
+    height: 173px;
+    padding-left: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.myInfo_kdh .leftArea_kdh dl dt {
+    float: left;
+    width: 160px;
+    padding: 26px 0 25px 0;
+}
+
+.myInfo_kdh .leftArea_kdh dl dt span {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    padding-left: 26px;
+}
+
+.myInfo_kdh .leftArea_kdh dl dd {
+    position: relative;
+    float: left;
+    width: 360px;
+    padding: 27px 0 27px 0;
+    box-sizing: border-box;
+}
+
+.myInfo_kdh .leftArea_kdh dl dd .myInterestList_kdh {
+    overflow: hidden;
+    height: 66px;
+    margin-top: -3px;
+}
+
+
+.myInfo_kdh .leftArea_kdh dl dt.myInterest_kdh span:after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    width: 32px;
+    height: 32px;
+    background: url(/project/resources/img/icon/관심분야.png) 0 0 no-repeat; 
+}
+
+.myInfo_kdh .rightArea_kdh {
+    float: right;
+    width: 555px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #ccc;
+}
+
+.myInfo_kdh .leftArea_kdh dl dd .myInterestList_kdh li {
+    line-height: 22px;
+}
+
+.myMenu_kdh {
+    overflow: hidden;
+    font-size: 0;
+}
+
+.myMenu_kdh li {
+    display: inline-block;
+    text-align: center;
+    width: 20%;
+}
+
+.myMenu_kdh li a {
+    display: block;
+    font-size: 42px;
+    color: #000;
+    padding: 31px 0 0 0;
+    min-height: 158px;
+}
+
+.myMenu_kdh li a span.num_kdh {
+    display: inline-block;
+    font-size: 42px;
+    color: #000;
+    line-height: 44px;
+    padding: 10px 5px 0 5px;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+
+.myMenu_kdh li a span.txt_kdh {
+    display: block;
+    font-size: 13px;
+    color: #999;
+    padding-top: 70px;
+}
+
+.myMenu_kdh li.item01_kdh a span.txt_kdh {
+    background: url(/awesomecenter/resources/dhimages/icon/장바구니.png) center 0 no-repeat;
+    padding-top:
+}
+
+.myMenu_kdh li.item02_kdh a span.txt_kdh {
+    background: url(/awesomecenter/resources/dhimages/icon/수강내역.png) center 0 no-repeat;
+}
+
+.myMenu_kdh li.item03_kdh a span.txt_kdh {
+    background: url(/awesomecenter/resources/dhimages/icon/대기자조회.png) center 0 no-repeat;
+}
+
+.myMenu_kdh li.item04_kdh a span.txt_kdh {
+    background: url(/awesomecenter/resources/dhimages/icon/수강후기.png) center 0 no-repeat;
+}
+
+.myMenu_kdh li.item05_kdh a span.txt_kdh {
+    background: url(/awesomecenter/resources/dhimages/icon/heart.png) center 0 no-repeat;
+}
+
+ /* ======================================================================================= */
+ 
+ /* 회원정보 */
+.memberModify_kdh .subtitle_kdh {
+    margin-top: 60px;
+}
+
+h3.subtitle_kdh {
+    font-size: 22px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.infoTable_kdh.aLeft_kdh th {
+    font-size: 15px;
+    width: 170px;
+}
+
+.infoTable_kdh.aLeft_kdh th, .infoTable_kdh.aLeft_kdh td {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.infoTable_kdh.aLeft_kdh td {
+    font-size: 16px;
+}
+
+.infoTable_kdh input:disabled {
+    color: #bbb;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+
+.check_kdh label {
+    display: inline-block;
+    padding-left: 31px;
+    color: #222;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.btnArea_kdh {
+    overflow: hidden;
+    text-align: center;
+    font-size: 0;
+}
+
+
+/* ======================================================================================= */
+
+	/* 강좌정보 수신동의 */
+	
+.receiveCheckArea_kdh {
+	padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+#editSave {
+    position: absolute;
+    top: 28px;
+    right: 84px;
+}
+
+.btnArea_kdh .inTxt_kdh {
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    vertical-align: middle;
+}
+
+.receiveCheckArea_kdh .txt_kdh {
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.memberModify_kdh .infoTable_kdh .btn_kdh {
+    width: 60px;
+}
+
+.memberModify_kdh .btnDropOut_kdh {
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    border-bottom: 1px solid #999;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+/* The Modal (background) */
+.modal_kdh {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal_kdh #modal-area_kdh {
+    position: absolute;
+    width: 900px;
+    margin: 0 auto;
+    top: 20%;
+    left: 0;
+    right: 0;
+}
+
+.modal_kdh #modal-area_kdh #modal-content_kdh {
+    background: #fff;
+    padding: 60px;
+    border-radius: 10px;
+}
+
+.modal_kdh .popTit_kdh {
+    font-size: 32px;
+    color: #222;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.modal_kdh .toptxt_kdh {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.modal_kdh .toptxt_kdh em {
+    font-size: 16px;
+    color: #e12a29;
+    font-style: normal;
+}
+
+.checkArea_kdh {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border: 1px solid #c6c6c6;
+    margin: 0 0 50px 0;
+}
+
+.checkArea_kdh .checkRow_kdh {
+    display: table-row;
+}
+
+.checkArea_kdh .checkRow_kdh:first-of-type a {
+    border-top: 0;
+}
+
+.checkArea_kdh a:first-of-type {
+    border-left: 0;
+}
+
+.checkArea_kdh a.on {
+    background: #000;
+    color: #fff;
+}
+
+.checkArea_kdh a, .checkArea_kdh span {
+    position: relative;
+    display: table-cell;
+    height: 60px;
+    vertical-align: middle;
+    text-align: center;
+    background: #f8f8f8;
+    border-left: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    font-size: 14px;
+    color: #999;
+    line-height: 1.4;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+.option {
+	color: red !important;
+	text-decoration: underline;
+}
+
+.checkArea_kdh .checkRow_kdh:first-of-type a.on:after {
+    height: 60px;
+}
+
+.checkArea_kdh a.on:after {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 60px;
+    border: 1px solid #000;
+    z-index: 1;
+    vertical-align: middle;
+}
+
+.btnClose_kdh {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-indent: -9999px;
+    width: 72px;
+    height: 72px;
+    background: url(/awesomecenter/resources/dhimages/icon/close.png) no-repeat;
+}

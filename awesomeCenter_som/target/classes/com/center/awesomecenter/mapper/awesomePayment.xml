@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ====  mapper 기본설정 ==== -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 루트 엘리먼트 & 네임스페이스 설정(프로젝트 전체 내에서 유일해야 한다.) -->
+<mapper namespace="awesomePayment">
+
+	<select id="checkSameLecture" parameterType="HashMap" resultType="int">
+		select count(*)
+		from tbl_cart
+		where CART_STATUS = 0 and FK_USERNO = #{userno} and FK_CLASS_SEQ = #{class_seq}
+	</select>
+	
+	<insert id="addCart" parameterType="HashMap">
+		insert into tbl_cart(cart_seq, fk_USERNO, fk_class_seq, cart_status)
+		values(seq_tbl_cart.nextval, #{userno}, #{class_seq}, default)
+	</insert>
+	
+	<select id="getCartList" parameterType="String" resultType="com.center.payment.model.CartVO">
+		select J.cart_seq, J.fk_class_seq, C.class_photo, C.class_title, C.class_semester, C.class_time, C.class_fee, T.teacher_name, C.class_day 
+      		  ,to_char(C.class_startDate, 'yyyy.mm.dd') as class_startDate, to_char(C.class_endDate, 'yyyy.mm.dd') as class_endDate, C.class_status, 
+      		  C.class_personnel 
+		from tbl_cart J JOIN tbl_class C on J.fk_class_seq = C.class_seq 
+     		 JOIN tbl_teacher T on C.fk_teacher_seq  = T.teacher_seq 
+		where cart_status = 0 and fk_USERNO = #{userno}
+	</select>
+	
+	<delete id="deleteCart" parameterType="String">
+		delete from tbl_cart where cart_seq = #{cart_seq}
+	</delete>
+	
+	<insert id="insertOneCart" parameterType="HashMap">
+		insert into tbl_cart(cart_seq, fk_USERNO, fk_class_seq, cart_status)
+		values(seq_tbl_cart.nextval, #{userno}, #{class_seq}, 1)
+	</insert>
+	
+	<select id="getCartNum" parameterType="HashMap" resultType="String">
+		select Max(cart_seq) as cart_seq from tbl_cart where fk_USERNO = #{userno} and fk_class_seq = #{class_seq} and cart_status = 1 
+	</select>
+	
+	
+	<!-- /////////////////////////////////// 승헌  ////////////////////////////////////  -->
+	<select id="getOrderDueList" parameterType="HashMap" resultType="com.center.payment.model.CartVO">
+	select J.cart_seq, J.fk_class_seq, C.class_photo, C.class_title, C.class_semester, C.class_time, C.class_fee, T.teacher_name, C.class_day 
+     	  ,to_char(C.class_startDate, 'yyyy.mm.dd') as class_startDate, to_char(C.class_endDate, 'yyyy.mm.dd') as class_endDate, C.class_status, 
+    	   C.class_personnel, c.class_startdate || '~' || c.class_enddate as class_term
+	from tbl_cart J JOIN tbl_class C on J.fk_class_seq = C.class_seq 
+    		 JOIN tbl_teacher T on C.fk_teacher_seq  = T.teacher_seq 
+	where cart_seq in 
+	<if test="deleteLecture != null">
+		<foreach collection="deleteLecture" index="i" open="(" close=")" separator=",">
+			${ deleteLecture[i] }
+		</foreach>
+	</if>
+	<if test="cart_seq != '' and cart_seq != null">
+		(#{ cart_seq })
+	</if> 
+		  and fk_USERNO = #{ userno }
+	
+	</select>
+	
+	<insert id="insertOneOrder" parameterType="HashMap" >
+		insert into awesome_orderlist(no, userno_fk, class_seq_fk, status, price, payday)
+		values (seq_orderlist.nextval, #{userno}, #{class_seq}, default, #{class_fee}, default)
+	</insert>
+	
+	<select id="selectPayment" parameterType="HashMap" resultType="com.center.payment.model.CartVO">
+		select rownum, C.class_seq, C.class_title, C.class_semester, T.teacher_name
+	      	 , to_char(C.class_startDate, 'yyyy.mm.dd') || '~' || to_char(C.class_endDate, 'yyyy.mm.dd') as class_term
+	      	 , C.class_day, C.class_time, C.class_fee
+	    from tbl_class C JOIN tbl_teacher T ON C.fk_teacher_seq  = T.teacher_seq JOIN awesome_orderlist O ON C.class_seq = o.class_seq_fk
+	    where o.userno_fk = #{userno} and class_seq = #{class_seq} and rownum = 1
+	    order by o.payday desc
+	</select>
+	
+	<insert id="insertStudent" parameterType="HashMap">
+		insert into tbl_student
+		values (seq_tbl_student.nextval, #{userno}, #{class_seq}, default)
+	</insert>
+	
+	<select id="getStudentCnt" parameterType="HashMap" resultType="String">
+		select count(*) as count
+		from tbl_student
+		where fk_class_seq = #{class_seq}
+	</select>
+	
+	<update id="waitUpdate">
+		update tbl_class set class_status = 0
+		where class_seq = #{class_seq} and class_personnel = #{ studentCnt }
+	</update>
+	
+	<select id="lecPaymentSuc" parameterType="HashMap" resultType="String">
+		select count(*)
+		from awesome_orderlist
+		where userno_fk = #{userno} and class_seq_fk = #{class_seq}
+	</select>
+	
+	
+	
+	
+	<!-- 대기자에서 결제 후 대기목록 삭제 -->
+	<delete id="deleteWaiting" parameterType="HashMap">
+		delete from waitinglist
+		where userno_fk = #{userno} and classno_fk = #{class_seq}
+	</delete>
+	
+	
+	
+</mapper>

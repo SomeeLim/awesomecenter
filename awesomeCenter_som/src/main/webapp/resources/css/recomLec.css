@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import "sprites.less";
+@import "path/to/font-awesome/less/font-awesome.less";
+@FontAwesomePath:   "../font";
+
+
+ div#lecture_body {
+     font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+     
+  }
+  
+  div#lecture_body a {
+     
+     text-decoration: none;
+     
+  }
+
+#lectureList {
+	width : 85%;
+	margin : 0 auto;
+}
+
+#lecture_nvar div {
+	display: inline-block;
+	font-size: 14px;
+	margin: 2px 12px 0;
+	color : #666;
+	font-weight: 400;
+}
+
+		
+#lecture_nvar img {
+	
+    position: relative;
+    top: -2.5px;
+    width: 16px;
+    height: 15px;
+}
+
+#lecture_nvar a {
+
+	font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+
+
+#lecture_h2 h2 {
+	font-weight: 500;
+	font-size: 52px;
+	margin-bottom: 70px;
+	letter-spacing: -3px;
+	font-family: "Noto Sans Kr";
+}
+
+
+#lecture_menu ul{
+
+	padding-inline-start: 0 !important;
+	list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    
+    width : 85%;
+	
+}
+
+#lecture_menu ul li{
+
+	display: inline-block;
+	width: 24.5%;
+	margin : 0;
+	padding : 0;
+    
+}
+
+#lecture_menu ul li a{
+
+    position: relative;
+    display: block;
+    height: 50px;
+    font-size: 26px;
+    color: #999;
+    vertical-align: top;
+    font-weight: 500;
+    text-align: center;
+    
+}
+
+
+#lecture_menu ul li {
+	float : left;
+}
+
+.action {
+
+	border-bottom: 5px solid #e12a29;
+	color : #222 !important;
+	
+}
+
+#realList {
+
+	clear: both;
+	background: #f4f4f4;
+	padding-top: 30px;
+	
+	padding-bottom: 120px;
+
+}
+
+
+#listLec {
+	width: 72%;
+	margin: 0 auto;
+	color: rgb(180,180,180);
+	font-size: 13pt;
+	margin-top: 10px;
+	
+}
+
+#pictureList ul {
+	list-style-type: none;
+	margin: 15px 0 0 -34px !important;
+	width:100%; 
+	position:relative;
+}
+
+.lecListPic {
+	width: 272px;
+	height: 272px;
+	margin-bottom: -5px;
+	
+}
+
+#pictureList {
+	padding-bottom: 20px;
+	margin-top: 25px;
+}
+
+.detailInfoSpan {
+	color: rgb(148,148,148);
+}
+
+#pictureList li:hover {
+	text-decoration: none;
+	color: rgb(148,148,148);
+}
+
+#pictureList ul li {
+	width: 272px;
+	height: 430px;
+	float: left;
+	position:relative; 
+	height:100%; 
+	width:25%;
+	margin-bottom: 35px;
+	cursor: pointer;
+}
+
+#pictureList ul:after {
+    display: block;
+    content: "";
+    clear: both;
+    height: 1px;
+}
+
+.prodItem {
+	background-color: white;
+	width: 272px;
+	height: 430px;
+}
+
+#thum {
+	margin-bottom: -6px;
+}
+
+.onApply {
+	display:inline-block;
+	background-color: rgb(221, 38, 50);
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 85px;
+	
+}
+
+.onWait {
+	display:inline-block;
+	background-color: rgb(253, 110, 45);
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 85px;
+}
+
+.closeApply {
+	display:inline-block;
+	background-color: rgb(119, 119, 119);
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 85px;
+}
+
+.detailAge {
+	display:inline-block;
+	background-color: black;
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 79px;
+}
+
+.detailCat {
+	display:inline-block;
+	color: black;
+	border: solid black 1px;
+	padding: 4px 0;
+	text-align: center;
+	width: 106px;
+	background-color: white;
+}
+
+#lecTitle {
+	font-size: 15pt;
+	line-height: 150%;
+	font-weight: bold;
+	color: black;
+}
+
+#lecDetailInfo {
+	padding: 3px 12px;
+	font-size: 9pt;
+}
+
+.lecTitleDIV {
+	height: 60px; 
+	padding: 0 12px; 
+	margin-top: 8px;
+}
+/*	
+	#goLoginBtn {
+	
+	    display: inline-block;
+	    height: 66px;
+	    line-height: 66px;
+	    font-size: 20px;
+	    width: 220px;
+	    background: white;
+	    border: 1px solid #aaa;
+	    color: #222;
+	}
+*/
+
+#noLogin h2 {
+
+	margin : 50px 0;
+	margin-bottom: 80px;
+}
+
+#goLoginBtn {
+
+	border-style : none;
+	background: #8d7e75;
+	height: 66px;
+    line-height: 66px;
+    font-size: 20px;
+    width: 220px;
+    color : white;
+}
+
+#goRegisBtn {
+
+	margin-left : 10px;
+	border-style : none;
+	background: white;
+	height: 66px;
+    line-height: 66px;
+    font-size: 20px;
+    width: 220px;
+    color : #8d7e75;
+}
+
+/* //////////////////////////////////////////////////////////// */
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 130px;
+  font-size : 13px;
+  background-color: #222;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -65px;
+  font-family: Nanum Gothic;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #222 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+#bestTeacherChart {
+   height: 400px; 
+}
+
+.highcharts-figure, .highcharts-data-table table {
+    min-width: 320px; 
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+.highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* 부트스트랩 ㅂㄷㅂㄷ */
+#lecture_body *,#lecture_body ::after,#lecture_body ::before {
+   	box-sizing: content-box !important;
+}

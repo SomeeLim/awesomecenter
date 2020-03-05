@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+
+	@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+	@import "sprites.less";
+	@import "path/to/font-awesome/less/font-awesome.less";
+	@FontAwesomePath:   "../font";
+
+   div#lecture_body {
+      font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+      
+   }
+   
+   div#lecture_body a {
+      
+      text-decoration: none;
+      
+   }
+
+	#lectureList {
+		width : 85%;
+		margin : 0 auto;
+	}
+	
+	#lecture_nvar div {
+		display: inline-block;
+		font-size: 14px;
+		margin: 2px 12px 0;
+		color : #666;
+		font-weight: 400;
+	}
+
+	#lecture_h2 h2 {
+		font-weight: 500;
+		font-size: 52px;
+		margin-bottom: 70px;
+		letter-spacing: -3px;
+		font-family: "Noto Sans Kr";
+	}
+	
+	#lecture_menu ul{
+	
+		padding-inline-start: 0 !important;
+		list-style: none;
+	    margin: 0 auto;
+	    padding: 0;
+	    
+	    width : 85%;
+		
+	}
+	
+	#lecture_menu ul li{
+	
+		display: inline-block;
+		width: 24.5%;
+		margin : 0;
+		padding : 0;
+	    
+	}
+	
+	#lecture_menu ul li a{
+	
+	    position: relative;
+	    display: block;
+	    height: 50px;
+	    font-size: 26px;
+	    color: #999;
+	    vertical-align: top;
+	    font-weight: 500;
+	    text-align: center;
+	    
+	}
+	
+	
+	#lecture_menu ul li {
+		float : left;
+	}
+	
+	.action {
+	
+		border-bottom: 5px solid #e12a29;
+		color : #222 !important;
+		
+	}
+	
+	#realList {
+	
+		clear: both;
+		background: #f4f4f4;
+		padding-top: 30px;
+	
+	}
+	
+	
+	
+	#scheduleContainer {
+		width: 70%;
+		margin: 0 auto;
+	}
+	
+
+	#scheduleContainer :after {
+	    display: block;
+	    content: "";
+	    clear: both;
+	    height: 1px;
+	}
+	
+	.selectCat {
+		width: 80px;
+		padding: 8px 10px;
+		background-color: white;
+		font-size: 11pt;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	.selectedCat {
+		width: 80px;
+		padding: 8px 10px;
+		background-color: black;
+		color: white;
+		font-size: 11pt;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	.selectDay {
+		width: 30px;
+		padding: 8px 10px;
+		background-color: white;
+		font-size: 11pt;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	.selectedDay {
+		width: 30px;
+		padding: 8px 10px;
+		background-color: black;
+		color: white;
+		font-size: 11pt;
+		display: inline-block;
+		text-align: center;
+		cursor: pointer;
+	}
+	
+	#lecScheduleTable {
+		width: 1110px;
+		margin-bottom: 26px;
+		border-collapse: collapse;
+		font-size: 10pt;
+	}
+	
+	#lecScheduleTable th {
+		text-align: center;
+		border-collapse: collapse;
+		border: solid 1px rgb(206,206,206);
+		font-weight: normal;
+		background-color: white;
+		padding: 15px 0;
+	}
+	
+	#lecScheduleTable td {
+		border-collapse: collapse;
+		border: solid 1px rgb(206,206,206);
+		padding: 12px 11px;
+	}
+	
+	#lecScheduleTable ul {
+		list-style-type: none;
+		padding-left: 2px !important;
+	}
+	
+	#lecScheduleTable li {
+		padding: 3px 0;
+	}
+	
+	#lecScheduleTable li a:hover {
+		text-decoration: none;
+		color: black;
+	}
+	
+	  #guide_nvar {
+   
+      margin : 0 auto;
+      width : 90%;
+   }
+
+   #guide_nvar div {
+      display: inline-block;
+      font-size: 14px;
+      margin: 2px 12px 0;
+      color : #666;
+      font-weight: 400;
+   }
+   
+         
+   #guide_nvar img {
+      
+       position: relative;
+       top: -2px;
+       width: 16px;
+       height: 15px;
+   }
+   
+   #lecture_nvar img {
+	
+    position: relative;
+    top: -2.5px;
+    width: 16px;
+    height: 15px;
+	}
+   
+   #guide_nvar a {
+   
+      font-size: 14px;
+       color: #666;
+       font-weight: 400;
+       text-decoration: none;
+   
+   }
+   
+   #lecture_nvar a {
+
+	font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    text-decoration: none;
+
+	}

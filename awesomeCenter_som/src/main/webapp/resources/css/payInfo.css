@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+#tab_menu{
+	margin-bottom: 25px;
+}
+
+td.tab{
+	border: solid 1px silver;
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	height: 50px;
+	cursor: pointer;
+	color: silver;
+}
+
+.orderTabTbl, .orderTbl, .reviewTbl{
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.orderTbl tr td{
+	border: solid 1px gray;
+	padding-left: 10px;
+	font-size: 9pt;
+}
+.orderTbl tr th{
+	border: solid 1px gray;
+	width: 15%;
+	background-color: #f8f8f8;
+	font-size: 10pt;
+	padding: 6px;
+	padding-left: 10px;
+}
+
+.tdCenter tr td, .tdCenter tr th{
+	padding-left: 0; 
+}
+
+td.active{
+	color: black;
+	border-bottom: solid 3px black;
+}
+
+.tblText{
+	font-weight: bold;
+	font-size: 11pt;
+}
+
+#orderBtn1{
+	border: solid 1px black; 
+	font-size: 10pt;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	width: 70px; 
+	padding: 3px 0;
+}
+
+#closeBtn{
+	border: solid 1px black;
+	text-align: center;
+	margin: 0 auto;
+	display: inline-block;
+	width: 100px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.prod{
+	border: solid 1px silver;
+	text-align: center;
+	padding: 10px;
+}
+
+.reviewTbl{
+}
+
+.reviewTbl tr td{
+	font-size: 9pt;
+	text-align: left;
+}
+
+#writeReview{
+	cursor: pointer;
+	border: solid 1px black;
+	padding: 5px;
+}
+
+.submitBtn{
+	background-color: #231f20;
+	color: white;
+}
+
+.cancelBtn{
+	background-color: white;
+	color: #231f20;
+}

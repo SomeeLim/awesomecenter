@@ -1,0 +1,269 @@
+@charset "UTF-8";
+
+div#search_body {
+      font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+      width : 85%;
+	  margin : 0 auto;
+   	}
+
+	
+	#lecture_nvar div {
+		
+		display: inline-block;
+		margin: 2px 12px;
+	
+	}
+	
+	#lecture_nvar a {
+		
+		font-size: 14px;
+		color : #666;
+		font-weight: 400;
+		text-decoration: none;
+	
+	}
+		
+	#lecture_nvar img {
+		
+	    position: relative;
+	    top: 2px;
+	    width: 16px;
+	    height: 15px;
+	}
+
+	#lecture_h2 h2 {
+	
+		font-weight: 500;
+		font-size: 52px;
+		margin-bottom: 70px;
+		letter-spacing: -3px;
+		font-family: "Noto Sans Kr";
+	
+	}
+	
+	/* search Form */
+	div#searchFrmDiv {
+		
+	    margin: 0 auto;
+    	width: 85%;
+    	text-align: center;
+    	
+    	margin-bottom: 70px;
+	
+	}
+	
+	input#searchWord {
+	
+		height: 70px;
+	    background: #eee;
+	    border: 0;
+	    font-size: 18px;
+  		width: 497px;
+  		padding: 0 50px 0 20px;
+  		
+	}
+	
+	div#searchZone {
+		background: #eee;
+		display: inline-block;
+		height: 70px;
+		vertical-align: middle;
+		margin-left: 10px;
+	}
+	
+	
+	input#reSearch {
+	
+		width: 20px;
+    	height: 20px;
+    	margin: 0 auto;
+    	position: relative;
+	    top: 6px;
+	    right: 3px;
+	}
+	
+	div#searchIcon {
+	
+	    margin: 0px 20px;
+	
+	}
+ 
+	div#searchIcon img {
+		
+		width: 33px;
+		height: 34px;
+	/* 	background: url(/awesomecenterprev/resources/images/돋보기.png) no-repeat 0 0; */
+		position: relative;
+	    top: 11px;
+	    
+	    cursor : pointer;
+	}
+
+
+	/* 수강신청 리스트 */
+	#listUL {
+	
+		width : 70%;
+		margin : 0 auto;
+		border-top: solid 1px #222;
+		list-style-type: none;
+		margin-bottom: 100px;
+		padding-left: 0;
+	}
+	
+	#listUL li {
+	
+		padding : 25px;
+		border-bottom: 1px solid #e5e5e5;
+	
+	}    
+	
+	#listUL li:hover {
+	
+		background: #fafafa;
+	}
+	
+	#listUL li a{
+	 
+	 	margin : 20px 0;
+		display: block;
+		font-size: 19px;
+    	color: #222;
+    	text-decoration: none;
+	
+	}
+	
+	#listUL li a:hover{
+	 
+	 	
+    	text-decoration: underline;
+	
+	}
+	
+	/* 검색결과 없음 */
+	.searchNoResult {
+	
+		width : 70%;
+		margin : 0 auto;
+		
+		padding: 70px 0;
+	    border-top: 1px solid #222;
+	    border-bottom: 1px solid #ccc;
+		margin-bottom: 160px;
+	
+	}	
+	
+	.searchNoResult div {
+	
+		position: relative;
+		left: 120px;
+	}
+	    
+	.searchNoResult li {
+		font-size: 16px;
+    	color: #666
+	}
+	
+	/* list category */
+	.onApply {
+      display:inline-block;
+      background-color: rgb(221, 38, 50);
+      color: white;
+      padding: 5px 11px;
+      text-align: center;
+      font-size: 11px;
+   }
+   
+   .onWait {
+      display:inline-block;
+      background-color: rgb(253, 110, 45);
+      color: white;
+      padding: 5px 11px;
+      text-align: center;
+      font-size: 11px;
+   }
+   
+   .closeApply {
+      display:inline-block;
+      background-color: rgb(119, 119, 119);
+      color: white;
+      padding: 5px 11px;
+      text-align: center;
+      font-size: 11px;
+   }
+   
+   .detailAge {
+      display:inline-block;
+      background-color: black;
+      color: white;
+      padding: 5px 11px;
+      text-align: center;
+      font-size: 11px;
+   }
+   
+   .detailCat {
+      display:inline-block;
+      color: black;
+      border: solid black 1px;
+      padding: 4px 11px;
+      text-align: center;
+	  font-size: 11px;
+   }
+	
+	/* 검색 결과 */
+	#lecDetail {
+		
+	    font-size: 14px;
+    	color: #999;
+    	
+	}
+	
+	#lecDetail span {
+		border-right: 1px solid #999;
+		padding: 0 12px; 
+	} 
+	
+	.searchWord {
+		background-color: #ffdcdc;
+	}
+	
+	.pagination {
+		
+    	width: 75%;	
+		margin: 0 auto;
+		padding-bottom: 50px;
+		text-align: center;
+		margin-bottom: 50px; 
+	}
+	
+	
+	.pagebar-btn {
+		margin-bottom: -11px;
+		width: 47px;
+		height: 38px;
+		opacity: 60%;
+	}
+	
+	.pagebar-btn:hover {
+		cursor : pointer;
+	}
+	
+	.pagebar-number {
+		color: rgb(62,62,62);
+		font-size: 12pt;
+		position: relative;
+    	top: -2px;
+	}
+	
+	.pagebar-number:hover {
+	
+		text-decoration: none;
+		color: rgb(62,62,62);
+		cursor : pointer;		
+	}
+	
+	.action {
+	
+		font-weight: bold !important;
+		text-decoration: underline !important;
+	}

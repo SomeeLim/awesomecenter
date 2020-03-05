@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+#reviewTbl {
+   font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+ }
+
+  #btnArea {
+		float : right;
+	}
+
+  #registerBtn {
+  		border : none;
+    	font-size: 12pt;
+    	font-weight: normal;
+    	padding: 6px 10px;
+    	background:  #222;
+    	color: white;
+    	border-radius: 1px;
+    }
+    
+    .orderby {
+    	font-size: 13px;
+    	vertical-align: text-top;
+    	color : #999;
+    	font-weight: normal;
+    }
+    
+    .action, .orderby:hover {
+	    
+	    font-family: 'Noto Sans KR';
+	    font-weight: 500;
+	    color: #222;
+    } 
+    
+    #searchBtn {
+    
+    	color : white;
+    	background : #222;
+    	border-radius: 1px;
+    	border : 1px solid #222;
+    	border-style : none;
+    	width : 42px;
+    	height : 26px;
+    	
+    }
+	
+	.pagination {
+		
+		display : block !important;
+    	width: 75%;	
+		margin: 0 auto;
+		margin-top : 25px;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+	
+	.pagebar-btn {
+		margin-bottom: -11px;
+		width: 47px;
+		height: 38px;
+		opacity: 60%;
+	}
+	
+	.pagebar-btn:hover {
+		cursor : pointer;
+	}
+	
+	.pagebar-number {
+		color: rgb(62,62,62);
+		font-size: 12pt;
+	    position: relative;
+	    top: 6px;
+	    left: 2px;
+	}
+	
+	.pagebar-number:hover {
+		text-decoration: none;
+		color: rgb(62,62,62);		
+		
+		cursor : pointer;
+	}
+	
+	
+	.action2 {
+	
+		font-weight: bold !important;
+		text-decoration: underline !important;
+	}

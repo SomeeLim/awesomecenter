@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 메인 틀 나누기 시작 */
+#main{
+	width: 1050px;
+	margin: 60px auto;
+}
+
+#main #leftArea,
+#main #leftSubArea1,
+#main #leftSubArea2,
+#main #searchBox,
+#main #leftSubArea3,
+#main #rightArea,
+#main #bottomArea{
+	display: inline-block;
+}
+
+
+#main #leftArea{
+	/* border: 1px solid red; */
+	float: left;
+	width: 750px;
+	height: 600px;
+	min-height: 600px;
+	margin-right: 30px;
+}
+
+#main #leftSubArea1{
+	/* border: 1px solid blue; */
+	width: 750px;
+	height: 300px;
+	margin-bottom: 25px;
+}
+
+#main #leftSubArea2{
+	border: 1px solid #666666;
+	width: 480px;
+	height: 235px;
+	padding-top: 20px;
+}
+
+#main #leftSubArea3{
+	/* border: 1px solid navy; */
+	width: 235px;
+	height: 235px;
+	float: right;
+}
+
+#main #rightArea{
+	/* border: 1px solid green; */
+	width: 250px;
+	height: 600px;
+	min-height: 600px;
+	float: right;
+}
+
+#main #bottomArea{
+	border: 1px solid gray;
+	width: 750px;
+	height: 25px;
+	position: relative;
+    bottom: 24px;
+}
+
+#main a.recommend{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(/awesomecenter/resources/hmimages/recommend_banner.png) no-repeat left top;
+    background-size: 100%;
+}
+
+#main a.recruit{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(/awesomecenter/resources/hmimages/rightBanner.png) no-repeat left top;
+    background-size: 240 440px;
+    border: solid 1px navy;
+}
+
+/* 메인 틀 나누기 끝 */
+
+/* 강좌검색 CSS 시작*/
+
+#main a.hm_a:link,
+#main a.hm_a:visited,
+#main a.hm_a:hover,
+#main a.hm_a:active,
+#main a.hm_a:focus {
+    text-decoration: none;
+}
+
+#main #searchBox{
+	width: 100%;
+}
+#main ol,#main ul,#main li {
+    list-style: none;
+}
+
+#main #searchBox ul{
+	padding: 10px 0;
+	font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
+}
+
+#main #searchBox li{
+	margin-bottom: 10px;
+}
+
+#main #searchBox label.title {
+    color: #333;
+    margin-left: 30px;
+    text-align: left;
+    font-size: 10pt;
+    letter-spacing: -0.5px;
+    display: inline-block;
+    width: 55px;
+}
+
+#main #searchBox select,#main #searchBox input[type="text"] {
+	font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
+	color: #666666;
+	height: 30px;
+    width: 135px;
+}
+
+#main #searchBox input[type="text"]{
+	width: 135px;
+	height: 24px;
+}
+
+#main #searchBox #lectName{
+	width: 362px;
+}
+
+#main #searchBox .center{
+	text-align: center;
+	line-height: 45px;
+}
+
+#main #searchBox .searchBtn{
+	display: inline-block;
+	width: 190px;
+	height: 45px;
+	line-height: 45px;
+	vertical-align: middle;
+    margin-top: 7px;
+    background: #7a6258;
+	color: #ffffff;
+	font-size: 12pt;
+}
+
+/* 강좌검색 CSS 끝 */
+
+
+

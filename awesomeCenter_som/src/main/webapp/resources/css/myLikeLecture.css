@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+#content_kdh h2 {
+    font-size: 52px;
+    color: #000;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.memberModify_kdh .name_kdh {
+    margin-bottom: 60px!important;
+}
+
+h2.name_kdh {
+    text-align: left !important;
+}
+
+	
+#pictureList ul {
+	list-style-type: none;
+	margin: 15px 0 0 -34px !important;
+	width:100%; 
+	position:relative;
+}
+
+.lecListPic {
+	width: 272px;
+	height: 272px;
+	margin-bottom: -5px;
+	
+}
+
+#pictureList {
+	padding-bottom: 20px;
+}
+
+#lecInfo {
+	background-color: #f4f4f4;
+}
+
+.detailInfoSpan {
+	color: rgb(148,148,148);
+}
+
+#pictureList li:hover {
+	text-decoration: none;
+	color: rgb(148,148,148);
+}
+
+#pictureList ul li {
+	width: 272px;
+	height: 430px;
+	float: left;
+	position:relative; 
+	height:100%; 
+	width:25%;
+	margin-bottom: 35px;
+	cursor: pointer;
+}
+
+#pictureList ul li a {
+	text-decoration: none;
+}
+
+#pictureList ul:after {
+    display: block;
+    content: "";
+    clear: both;
+    height: 1px;
+}
+
+.prodItem {
+	background-color: white;
+	width: 272px;
+	height: 430px;
+}
+
+#thum {
+	margin-bottom: -6px;
+}
+
+.onApply {
+	display:inline-block;
+	background-color: rgb(221, 38, 50);
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 85px;
+	
+}
+
+.onWait {
+	display:inline-block;
+	background-color: rgb(253, 110, 45);
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 85px;
+}
+
+.closeApply {
+	display:inline-block;
+	background-color: rgb(119, 119, 119);
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 85px;
+}
+
+.detailAge {
+	display:inline-block;
+	background-color: black;
+	color: white;
+	padding: 5px 0;
+	text-align: center;
+	width: 79px;
+}
+
+.detailCat {
+	display:inline-block;
+	color: black;
+	border: solid black 1px;
+	padding: 4px 0;
+	text-align: center;
+	width: 106px;
+}
+
+#lecTitle {
+	font-size: 15pt;
+	line-height: 150%;
+	font-weight: bold;
+	color: black;
+}
+
+#lecDetailInfo {
+	padding: 3px 12px;
+	font-size: 9pt;
+}
+
+.lecTitleDIV {
+	height: 60px; 
+	padding: 0 12px; 
+	margin-top: 8px;
+}
+
+#btnMore {
+	border: solid 1px black;
+	background-color: white;
+	padding: 10px 30px;
+	font-size: 12pt;
+	margin: 0 auto;
+	cursor: pointer;
+}

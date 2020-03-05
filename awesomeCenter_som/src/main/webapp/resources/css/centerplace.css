@@ -1,0 +1,245 @@
+@charset "UTF-8";
+
+#content_kdh {
+	margin-bottom: 80px;
+	padding-bottom: 160px;
+}
+
+#content_kdh .h2 {
+	font-size: 52px;
+    color: #000;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.placeArea {
+    padding: 58px 0 50px;
+    overflow: hidden;
+}
+
+.placeImg {
+	float:left;
+	width:800px;
+	padding-bottom: 44px;
+}
+
+.placeInfo {
+    float: right;
+    width: 280px;
+    height: 507px;
+    background: #fff;
+    padding: 60px 40px 0 40px;
+}
+
+.placeInfo > div {
+	height: 195px;
+}
+
+.placeInfo > div .stxt {
+    display: block;
+    font-size: 18px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.placeInfo > div .placeName {
+    font-size: 46px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    color: #222;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+.placeInfo > ul li:first-child {
+    padding-top: 0;
+    border-top: 0;
+}
+
+.placeInfo > ul li {
+    border-top: 1px solid #e5e5e5;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 25px 0 25px 27px;
+    position: relative;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+
+.placeInfo > ul li:before {
+    display: block;
+    content: "";
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    left: 0;
+}
+
+.placeInfo > ul li.ico01:before {
+    top: 4px;
+    background: url(/awesomecenter/resources/dhimages/icon/place.png) no-repeat 0 0;
+    background-size: 18px 19px;
+}
+
+.placeInfo > ul li.ico02:before {
+    top: 28px;
+    background: url(/awesomecenter/resources/dhimages/icon/call.png) no-repeat 0 0;
+    background-size: 18px 19px;
+}
+
+.placeInfo > ul li.ico03:before {
+    top: 28px;
+    background: url(/awesomecenter/resources/dhimages/icon/door.png) no-repeat 0 0;
+    background-size: 18px 19px;
+}
+
+
+.trafficArea {
+	position: relative;
+	padding: 60px 0 0;
+	height: 700px;
+}
+
+.trafficArea .mapArea {
+    position: relative;
+}
+
+.trafficArea .trafficInfo .bus {
+    padding-bottom: 40px;
+}
+
+.trafficArea .trafficInfo dl {
+    padding-top: 40px;
+}
+
+.trafficArea .trafficInfo dt {
+    float: left;
+    width: 235px;
+    font-size: 22px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    color: #222;
+}
+
+.trafficArea .trafficInfo dt span {
+    display: block;
+    color: #ccc;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.trafficArea .trafficInfo dd {
+    max-width: 920px;
+    float: left;
+    margin-top: 3px;
+}
+
+.trafficArea .trafficInfo dd li:first-child {
+    margin-top: 0px;
+}
+.trafficArea .trafficInfo dd li {
+    margin-top: 10px;
+    max-width: 850px;
+}
+
+.trafficArea .trafficInfo .subway .subwayIcoWrap {
+    width: 95px;
+    height: 26px;
+    float: left;
+}
+
+.trafficArea .trafficInfo .subway dd li .subwayIcoWrap span {
+    display: inline-block;
+    height: 26px;
+    line-height: 22px;
+    font-size: 13px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    padding: 0 11px;
+    border-radius: 20px;
+}
+
+.trafficArea .trafficInfo .subway dd li .line01 {
+    color: #263c96;
+    border: 2px solid #263c96;
+}
+
+.trafficArea .trafficInfo .subway dd li .line02 {
+    color: #3cb44a;
+    border: 2px solid #3cb44a;
+}
+
+.trafficArea .trafficInfo .subway dd li > p {
+    display: block;
+    float: left;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0 0 0 15px;
+    color: #666;
+}
+
+.trafficArea .trafficInfo .bus .busIcoWrap {
+    width: 95px;
+    height: 26px;
+    float: left;
+}
+
+.trafficArea .trafficInfo .bus dd li span {
+    padding: 0 10px;
+    height: 26px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 26px;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    color: #fff;
+    border-radius: 50px;
+}
+
+.trafficArea .trafficInfo .bus dd li .bus01 {
+    background-color: #405db6;
+}
+
+.trafficArea .trafficInfo .bus dd li .bus02 {
+    background-color: #5aa228;
+}
+
+.trafficArea .trafficInfo .bus dd li .bus03 {
+    background-color: #d5080d;
+}
+
+.trafficArea .trafficInfo .bus dd li p {
+	max-width: 740px;
+    float: left;
+    font-size: 16px;
+    line-height: 26px;
+    color: #666;
+    margin: 0 0 0 15px;
+
+}
+
+.iw_inner < div < div {
+	border :solid 3px gray !important;
+}
+
+#link {
+	color: blue;
+}
+
+#link:visited, #link:active, #link:after, #link:before {
+	color: blue;
+}

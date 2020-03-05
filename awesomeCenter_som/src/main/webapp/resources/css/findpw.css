@@ -1,0 +1,232 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+#findpw{
+	font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#findpw .title{
+    margin-bottom: 30px;
+    padding: 8px 0;
+    font-weight: 100;
+    font-size: 28px;
+    line-height: 18px;
+    color: #000;
+    word-break: break-all;
+}
+
+#findpw .headline {
+    margin: 0 0 10px;
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 38px;
+    color: #000;
+    letter-spacing: -0.05em;
+    word-break: break-all;
+    margin-bottom: 59px;
+}
+
+.contents{
+	border-top: solid 1px #8E8E8E;
+}
+
+.row {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.row > .col-md {
+    display: block;
+    width: 100%;
+    color: #000;
+}
+.row > .col-md:first-child {
+    color: #8a8a8a;
+}
+
+.ui-radio {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px 0 0;
+}
+
+.ui-radio > input {
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 14px;
+    height: 14px;
+}
+
+.ui-radio > label {
+    display: inline-block;
+    padding: 0 0 0 25px;
+    min-height: 18px;
+    line-height: 18px;
+    font-size: inherit;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.ui-radio > input:checked + label:before {
+    background-position: -46px 0;
+}
+.ui-radio > label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-size: 90px 18px;
+    overflow: hidden;
+}
+
+.inner-content.active {
+    display: block;
+    margin: 20px 0 -20px;
+}
+
+.inner-content {
+    display: none;
+    margin: 20px 0;
+    padding: 25px;
+    border-top: 1px solid #eee;
+    background-color: #fafafa;
+}
+
+.form-wrap.__normal .ui-input {
+    margin: 0 6px 0 0;
+    max-width: 462px;
+    width: 100%;
+}
+
+.ui-input {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #f0f0f0;
+}
+
+.ui-input > input {
+    position: relative;
+    width: 380px;
+    padding-left: 10px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 34px;
+    border: 0;
+    background-color: #fff;
+    opacity: 0;
+    z-index: 1;
+}
+
+.form-wrap.__phone .ui-select {
+    width: 108px;
+}
+.ui-select {
+    position: relative;
+    padding: 0 5px;
+    height: 34px;
+    line-height: 32px;
+    font-size: 13.905px;
+    color: #000;
+    border: 1px solid #f0f0f0;
+    border-radius: 0;
+    background-color: #f0f0f0;
+}
+
+.ui-input > .placeholder {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0 10px;
+    font-size: 13.125px;
+    line-height: 34px;
+    color: #8a8a8a;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#celphone_no2, 
+#celphone_no3{
+	width: 100px;
+}
+
+#cancleBtn{
+	border: solid 1px #000 !important;
+	margin-left: 20px !important;
+}
+
+#findBtn, #cancleBtn{
+	width: 200px;
+	height: 50px !important;	
+}
+
+.btns{
+	text-align: center;
+	margin-bottom: 30px;
+	margin-top: 50px;
+}
+
+.ui-input.__disable + .ui-button.__square-small {
+    margin-left: 20px;
+}
+
+.ui-button.__black {
+    color: #fff;
+    background-color: #333;
+}
+
+.ui-button {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: inherit;
+    text-align: center;
+    vertical-align: top;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.ui-button.__square-small {
+    padding: 0 2px;
+    min-width: 70px;
+    height: 34px;
+    font-size: 13px;
+    line-height: 34px;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#findBtn{
+	display: inline-block;
+	width: 100px;
+	height: 36px !important;
+	margin-left: 5px;
+	vertical-align: bottom;
+}
+
+.middle{
+	vertical-align: middle;
+	margin-right: 50px;
+}
+
+.authphone{
+	padding-left: 20px;
+}
+
+#find-hp-user-hp-1{
+	height: 36px;
+}

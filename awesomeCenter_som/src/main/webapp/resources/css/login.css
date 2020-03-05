@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#loginFrm{
+	padding-top: 100px;
+	padding-bottom: 200px;
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#loginFrm .input, 
+#loginFrm #loginBtn{
+	display: block;
+	margin: 0 auto;
+	margin-top: 15px;
+	width: 380px;
+	height: 40px;
+	font-size: 13pt;
+}
+
+#loginFrm #loginBtn{
+	background-color: #333333;
+	color: #fff;
+	line-height: 70px;
+	cursor: pointer;
+	width: 400px;
+	height: 70px;
+	margin-bottom: 30px;
+}
+
+#loginFrm .input{
+	padding: 10px;
+}
+
+#loginFrm #logo{
+	margin: 0 auto;
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
+}
+
+#loginFrm #bottomArea{
+	margin: 0 auto;
+	width: 400px;
+	color: #8E8E8E;
+}
+
+#loginFrm .bottomTxt{
+	cursor: pointer;
+}
+
+#loginFrm .bottomTxt:hover{
+	cursor: pointer;
+	color: #000;
+}

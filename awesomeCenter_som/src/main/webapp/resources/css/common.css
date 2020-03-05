@@ -1,0 +1,263 @@
+@charset "UTF-8";
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	margin: 0;
+}
+
+body {
+	font-size: 14px;
+}
+
+.form {
+    display: block;
+    border: 0;
+}
+
+.h2 {
+    letter-spacing: -3px;
+}
+
+.atag {
+    color: #666;
+    text-decoration: none;
+    word-break: break-all;
+    /* outline: 0; */
+}
+
+.atag:link, .atag:visited, .atag:hover, .atag:active, .atag:focus {
+    text-decoration: none;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+.olulli {
+    list-style: none;
+}
+
+.input, .textarea, .select {
+    font-family: 'Noto Sans KR',Helvetica,"Apple SD Gothic Neo",sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.label, .button {
+    cursor: pointer;
+}
+
+/* ======================================================================================= */
+
+#container_kdh {
+    position: relative;
+}
+
+#content_kdh {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-width: 1320px;
+    min-height: 700px;
+    margin: 0 auto;
+    position: relative;
+    background: #fff;
+}
+
+/* ======================================================================================= */
+/* 메뉴바  */
+
+.menu_kdh {
+    position: absolute;
+    right: 0;
+    left: 80px;
+    top: 30px;
+    width: 1320px;
+    margin: 0 auto;
+    text-align: right;
+}
+
+#content_kdh > .menu_kdh > a {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#content_kdh > .menu_kdh > a:before {
+    margin: 2px 12px 0 12px;
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 13px;
+    background: #e5e5e5;
+    vertical-align: top;
+}
+
+#content_kdh > .main_kdh {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+/* ======================================================================================= */
+/* 테이블  */
+
+.infoTable_kdh {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #ccc;
+}
+
+.infoTable_kdh table {
+    table-layout: fixed;
+}
+
+.infoTable_kdh th.last, .infoTable_kdh td.last, .infoTable_kdh tr:last-child th, .infoTable_kdh tr:last-child td {
+    border-bottom: 0;
+}
+
+.infoTable_kdh th {
+    font-size: 16px;
+    color: #222;
+    text-align: center;
+    padding: 11px 5px 10px 5px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #f4f4f4;
+    height: 66px;
+    font-weight: normal;
+}
+
+.infoTable_kdh td {
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    padding: 11px 5px 10px 5px;
+    border-bottom: 1px solid #e5e5e5;
+    height: 86px;
+}
+
+table td.noData_kdh {
+    height: 277px;
+    font-size: 22px;
+    color: #222;
+}
+
+/* ======================================================================================= */
+/* form */
+
+.check_kdh {
+    display: inline-block;
+    position: relative;
+    margin-right: 30px;
+}
+
+.check_kdh input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}
+
+.select_kdh {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* ======================================================================================= */
+/* margin, btn etc */
+
+.btnArea_kdh > a {
+    margin-left: 10px;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mb15_kdh {
+    margin-bottom: 15px !important;
+}
+
+.mb30_kdh {
+	margin-bottom: 30px !important;
+}
+
+.aRight_kdh {
+    text-align: right !important;
+}
+
+.aLeft_kdh {
+    text-align: left !important;
+}
+
+.btn_kdh {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    min-width: 55px;
+}
+
+
+.btnBlue_kdh {
+    background: #0093c0;
+}
+
+.btnBlack_kdh {
+    background: #000;
+}
+
+.btnRed_kdh {
+    background: #eb2d2f;
+}
+
+.btnWhite_kdh {
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #222;
+}
+
+.btnType01_kdh {
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    min-width: 55px;
+}
+
+.btnType02_kdh {
+    height: 66px;
+    line-height: 66px;
+    font-size: 20px;
+    min-width: 120px;
+}
+
+.btnType03_kdh {
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+/* ======================================================================================= */

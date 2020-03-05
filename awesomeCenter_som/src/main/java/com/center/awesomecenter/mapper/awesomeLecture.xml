@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!-- ====  mapper 기본설정 ==== -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 루트 엘리먼트 & 네임스페이스 설정(프로젝트 전체 내에서 유일해야 한다.) -->
+<mapper namespace="awesomeLecture">
+
+	<!-- /////////////////////////////////////////////////////////// -->
+	<!-- ///////////////////// 소미 & 승헌 LIST ////////////////////////// -->
+	<!-- /////////////////////////////////////////////////////////// -->
+
+	<select id="lectureApply" parameterType="HashMap" resultType="com.center.lecture.model.LectureVO">
+		select RNO, class_seq, fk_cate_no, cate_name, cate_code, fk_teacher_seq, teacher_name, class_title, class_semester, class_fee, class_day, class_time, class_photo, class_status                    
+		from
+		    (
+		    select rownum AS RNO, class_seq, fk_cate_no, cate_name, cate_code, fk_teacher_seq, teacher_name, class_title, class_semester, class_fee, class_day, class_time, class_photo, class_status
+		    from
+		    (                         
+		    select C.class_seq, C.fk_cate_no, L.cate_name, L.cate_code, C.fk_teacher_seq, T.teacher_name, C.class_title, C.class_semester,
+		           C.class_fee, C.class_day, C.class_time, C.class_photo, C.class_status
+		    from tbl_teacher T JOIN tbl_class C on C.fk_teacher_seq = T.teacher_seq
+		         JOIN lec_category L on L.cate_no = C.fk_cate_no 
+		    where rownum >= 1
+		    
+		    <if test='cate_code != ""'>
+		    	and cate_code = #{cate_code} 
+		    </if>
+		    <if test='cate_no != ""'>
+		    	and c.fk_cate_no = #{cate_no} 
+		    </if>
+		    <if test='class_status != ""'>
+		    	and class_status = #{class_status} 
+		    </if>
+		    <if test='class_semester != ""'>
+		    	and trim(class_semester) = #{class_semester}
+		    </if>
+		    <if test='class_day != ""'>
+		    	and class_day = #{class_day} 
+		    </if>
+		    <if test='searchWord != ""'>
+		    	and ${ searchType }  like '%' || #{ searchWord } || '%'
+		    </if>
+		   
+		    order by C.CLASS_STARTDATE desc,
+		    <if test='listfilter != "" and listfilter == "1" '>
+		    	 class_seq desc
+		    </if>
+		    <if test='listfilter != "" and listfilter == "3" '>
+		    	class_fee asc
+		    </if>
+		    <if test='listfilter != "" and listfilter == "4" '>
+		    	class_fee desc
+		    </if>
+		    ) V
+		) T
+		where T.RNO between #{firstPage} and #{lastPage}
+	</select>
+	
+	<select id="getTotalPage" resultType="int" parameterType="HashMap" >
+		select  ceil(count(*)/ 12 ) as totalPage
+		    from tbl_teacher T JOIN tbl_class C on C.fk_teacher_seq = T.teacher_seq
+		         JOIN lec_category L on L.cate_no = C.fk_cate_no 
+		    where class_seq >= 1
+		 
+			<if test='cate_code != ""'>
+		    	and cate_code = #{cate_code} 
+		    </if>
+		    <if test='cate_no != ""'>
+		    	and c.fk_cate_no = #{cate_no} 
+		    </if>
+		    <if test='class_status != ""'>
+		    	and class_status = #{class_status} 
+		    </if>
+		    <if test='class_semester != ""'>
+		    	and trim(class_semester) = #{class_semester}
+		    </if>
+		    <if test='class_day != ""'>
+		    	and class_day = #{class_day} 
+		    </if>
+		    <if test='searchWord != ""'>
+		    	and ${ searchType }  like '%' || #{ searchWord } || '%'
+		    </if>
+	</select>
+	
+	<!-- /////////////////////////////////////////////////////////// -->
+	<!-- ///////////////////// 소미 MAPPER ////////////////////////// -->
+	<!-- /////////////////////////////////////////////////////////// -->
+	
+	<select id="lectureDetail" parameterType="String" resultType="com.center.lecture.model.LectureVO"> 
+		select C.class_seq, C.fk_cate_no, L.cate_name, L.cate_code, C.fk_teacher_seq, T.teacher_name, C.class_title, C.class_semester
+		      ,to_char(C.class_startDate, 'yyyy.mm.dd') as class_startDate, to_char(C.class_endDate, 'yyyy.mm.dd') as class_endDate
+		      ,C.class_fee, C.class_subFee, C.class_day, C.class_place
+		      ,C.class_personnel, C.class_time, C.class_photo, C.class_content, C.class_status, C.class_heart
+		from tbl_teacher T JOIN tbl_class C on C.fk_teacher_seq = T.teacher_seq
+		     JOIN lec_category L on L.cate_no = C.fk_cate_no
+		where class_seq = #{class_seq}
+	</select>
+	
+	<select id="lectureRegister_term" resultType="String">
+		select to_char((select TRUNC(sysdate,'MM') from dual), 'yyyy.mm.dd') || ' ~ ' || to_char((select last_day(sysdate) from dual), 'yyyy.mm.dd') as register_term
+		from dual
+	</select>
+	
+	<resultMap type="HashMap" id="teacherMap">
+		<result property="teacher_career1" column="teacher_career1" javaType="String" /> 
+		<result property="teacher_career2" column="teacher_career2" javaType="String" /> 
+	</resultMap>
+	<select id="getTeacherInfo" parameterType="int" resultMap="teacherMap">
+		select teacher_career1, teacher_career2 
+		from tbl_teacher
+		where teacher_seq = #{fk_teacher_seq}
+	</select>
+	
+	<select id="lectureScheduleJSON" parameterType="HashMap" resultType="com.center.lecture.model.LectureVO">
+		select class_seq, class_title, class_day, class_place, class_time
+		from tbl_class
+		where class_day = #{selectedDay} and fk_cate_no between #{catNum1} and #{catNum2} and class_semester='3월'
+		order by class_place, class_time
+	</select>
+	<!-- ////////////////////1차 합치기/////////////////////////////////////// -->
+	
+	<insert id="likeLecture" parameterType="HashMap">
+		insert into heartLecture(heartNo, fk_USERNO, fk_class_seq)
+		values(heartLecture_seq.nextval, #{userno}, #{class_seq})
+	</insert>
+	
+	<delete id="dislikeLecture" parameterType="HashMap">
+		delete from heartLecture where fk_USERNO = #{userno} and fk_class_seq =#{class_seq}	
+	</delete>
+	
+	<select id="checkHeart" parameterType="HashMap" resultType="int"> 
+		select count(*) from heartLecture where fk_USERNO = #{userno} and fk_class_seq =#{class_seq}	
+	</select>
+	
+	<insert id="registerWait" parameterType="java.util.HashMap">
+		insert into WAITINGLIST(SEQ, USERNO_FK, CLASSNO_FK, RECIPTDAY, STATUS)
+		values(SEQ_WAITINGLIST.nextval, #{userno}, #{class_seq}, default, default)
+	</insert>
+	
+	<select id="checkWaiting" parameterType="HashMap" resultType="int"> 
+		select count(*) from tbl_student where fk_USERNO = #{userno} and fk_class_seq = #{class_seq}
+	</select>
+	
+	<select id="checkWaitingList" parameterType="HashMap" resultType="int" >
+		select count(*) from WAITINGLIST where USERNO_FK = #{userno} and CLASSNO_FK = #{class_seq}
+	</select>
+	
+	<update id="closeLecture">
+		update tbl_class set CLASS_STATUS = 2 where CLASS_SEQ = 48
+	</update>
+	
+	<select id="checkReviewNum" parameterType="String" resultType="int"> 
+		select count(*) 
+		from (
+				select O.CLASS_SEQ_FK  
+				from awesome_review R JOIN AWESOME_ORDERLIST O 
+					  on R.FK_ORDERNO = O.NO) 
+		where CLASS_SEQ_FK = #{class_seq}
+	</select>
+	
+	<resultMap type="HashMap" id="DetailReviewMap">
+		<result property="class_seq" column="class_seq" javaType="String" /> 
+		<result property="class_semester" column="class_semester" javaType="String" />
+		<result property="class_title" column="class_title" javaType="String" />
+		<result property="REVIEWNO" column="REVIEWNO" javaType="String" />
+		<result property="SUBJECT" column="SUBJECT" javaType="String" />
+		<result property="USERNAME" column="USERNAME" javaType="String" />
+		<result property="WDATE" column="WDATE" javaType="String" />
+	</resultMap>
+	<select id="getReviewDetail" parameterType="String" resultMap="DetailReviewMap">
+		select rno, class_seq, substr(class_semester,1,2) as class_semester, class_title, REVIEWNO, SUBJECT, substr(USERNAME,1,1) || '*' || substr(username,3,1) as username, to_char(WDATE, 'yyyy.mm.dd') as wdate
+		from (
+		        select rownum as rno, class_seq, T.class_semester, T.class_title, R.REVIEWNO, R.SUBJECT, M.USERNAME, R.WDATE
+		        from awesome_review R JOIN AWESOME_ORDERLIST O on R.FK_ORDERNO = O.NO
+		             JOIN tbl_class T on O.CLASS_SEQ_FK = T.class_seq
+		             JOIN awesome_member M on  O.USERNO_FK = M.userno
+		        where class_seq = #{class_seq}
+		        order by WDATE desc) 
+		where rno between 1 and 4
+	</select>
+	
+	<update id="likeLectureCol">
+		update tbl_class set CLASS_HEART = CLASS_HEART +1 where CLASS_SEQ = #{class_seq}
+	</update>
+	
+	<update id="dislikeLectureCol">
+		update tbl_class set CLASS_HEART = CLASS_HEART -1 where CLASS_SEQ = #{class_seq}
+	</update>
+	
+	<select id="getLikeCat" parameterType="String" resultType="String">
+		select CATE_NO_FK
+		from WISHCATEGORY where USERNO_FK = #{userno}
+	</select>
+	
+	<resultMap type="HashMap" id="goodTeaMap">
+		<result property="TEACHER_NAME" column="TEACHER_NAME" javaType="String" /> 
+		<result property="TEACHER_SEQ" column="TEACHER_SEQ" javaType="String" />
+		<result property="sum" column="sum" javaType="String" />
+		<result property="rate" column="rate" javaType="String" />
+		<result property="cate_name" column="cate_name" javaType="String" />
+	</resultMap>
+	<select id="getGoodTea" parameterType="HashMap" resultMap="goodTeaMap">
+		select distinct(TEACHER_NAME) as TEACHER_NAME, TEACHER_SEQ, sum ,rate, cate_name
+		from
+		(
+			select distinct(TEACHER_NAME), TEACHER_SEQ, sum, cate_name
+			      ,round(sum/(select sum(CLASS_HEART) 
+			      			  from tbl_class 
+			      			  <if test="catList != null">
+				      			  where FK_CATE_NO in 
+				      			  <foreach collection="catList" index="i" open="(" separator="," close=")">
+						             to_char( '${catList[i]}' )
+						          </foreach>
+					          </if>
+			      			  )*100,2 ) as rate
+			from
+			(
+			    select (select sum(CLASS_HEART) from tbl_class where FK_TEACHER_SEQ = T.TEACHER_SEQ ) as sum , TEACHER_NAME, TEACHER_SEQ, L.cate_name
+			    from tbl_teacher T JOIN tbl_class C on T.TEACHER_SEQ = C.FK_TEACHER_SEQ
+			    	 JOIN lec_category L on L.cate_no = C.FK_CATE_NO
+			    <if test="catList != null">
+				    where C.FK_CATE_NO in 
+				    <foreach collection="catList" index="i" open="(" separator="," close=")">
+			           to_char( '${catList[i]}' )
+			        </foreach>
+		        </if>
+			)
+			order by sum desc
+		)
+		where rownum between 1 and 10
+		order by sum desc
+	</select>
+	
+	<select id="totalLikeCnt" parameterType="String" resultType="int">
+		select count(*)
+		from heartLecture
+		where fk_USERNO = #{userno}
+	</select>
+	
+	<select id="myLikeLecturesList" parameterType="HashMap" resultType="com.center.lecture.model.LectureVO">
+		select rno, cate_name, cate_code, CLASS_SEQ, TEACHER_NAME, CLASS_TITLE, CLASS_SEMESTER, CLASS_FEE, CLASS_DAY, CLASS_TIME, CLASS_PHOTO, CLASS_STATUS
+		from (
+				select rownum as rno, cate_name, cate_code, CLASS_SEQ, TEACHER_NAME, CLASS_TITLE, CLASS_SEMESTER, CLASS_FEE, CLASS_DAY, CLASS_TIME, CLASS_PHOTO, CLASS_STATUS
+				from heartLecture H JOIN tbl_class C on H.fk_class_seq =C.class_seq 
+					 JOIN tbl_teacher T on C.FK_TEACHER_SEQ = T.TEACHER_SEQ
+					 JOIN lec_category L on L.cate_no = C.fk_cate_no 
+				where fk_USERNO = #{userno}
+		)
+		where rno between #{start} and #{end}
+	</select>
+	
+	<select id="checkThisClass" parameterType="HashMap" resultType="int">
+		select count(*) from tbl_student where FK_USERNO = #{userno} and FK_CLASS_SEQ = #{class_seq}	
+	</select>
+	
+	<insert id="addPreBoard">
+		insert into prepareBoard(preSeq, fk_class_seq, preTitle, preContent, preWriteDate, preCommentCount, preStatus)
+		values(seq_prepareBoard.nextval,#{fk_class_seq},#{preTitle},#{preContent},default,default,default)
+	</insert>
+	
+	<insert id="addPreBoard_withFile">
+		insert into prepareBoard(preSeq, fk_class_seq, preTitle, preContent, preWriteDate, preCommentCount, preStatus, preFileName, preOrgFilename, preFileSize)
+		values(seq_prepareBoard.nextval,#{fk_class_seq},#{preTitle},#{preContent},default,default,default, #{preFileName}, #{preOrgFilename}, #{preFileSize})
+	</insert>
+	
+	<select id="getPrepareList" parameterType="HashMap" resultType="com.center.lecture.model.PreBoardVO">
+		select rno, preSeq, preTitle, teacher_name, preWriteDate, preCommentCount
+		from(
+			select rownum as rno, preSeq, preTitle, teacher_name, preWriteDate, preCommentCount
+			from (
+				select preSeq, preTitle, T.teacher_name, to_char(preWriteDate, 'yyyy.mm.dd') as preWriteDate, preCommentCount
+				from prepareBoard P JOIN tbl_class C on P.fk_class_seq = C.class_seq
+				     JOIN tbl_teacher T on C.FK_TEACHER_SEQ = T.TEACHER_SEQ
+				     where C.class_seq = #{class_seq} and preStatus = 1
+				     <if test='searchType != ""'>
+						and ${searchType} like '%' || #{searchWord} || '%'
+					</if>
+				     order by preSeq desc
+			)
+			order by rno
+		)
+		where rno between #{firstPage} and #{lastPage}
+	</select>
+	
+	<update id="deletePreBoard" parameterType="String">
+		update prepareBoard set preStatus = 0
+		where preSeq = #{preSeq}
+	</update>
+	
+	<select id="prepareDetail" parameterType="String" resultType="com.center.lecture.model.PreBoardVO">
+		select preSeq, fk_class_seq, preTitle, preContent, to_char(preWriteDate, 'yyyy.mm.dd') as preWriteDate, preFileName, preCommentCount, preOrgFilename, preFileSize
+		from prepareBoard
+		where preSeq = #{preSeq}
+	</select>
+	
+	<update id="editPre" parameterType="com.center.lecture.model.PreBoardVO">
+		update prepareBoard set preTitle = #{preTitle} , preContent = #{preContent} , preWriteDate = default
+		where preSeq = #{preSeq}
+	</update>
+	
+	<update id="editPre_withFile" parameterType="com.center.lecture.model.PreBoardVO">
+		update prepareBoard 
+		set preTitle = #{preTitle} , preContent = #{preContent} , preWriteDate = default
+		   ,preFileName = #{preFileName}, preOrgFilename = #{preOrgFilename}, preFileSize = #{preFileSize}
+		where preSeq = #{preSeq}
+	</update>
+	
+	<!-- ////////////////////2차 합치기/////////////////////////////////////// -->
+	
+	<select id="getPretotalPage" parameterType="HashMap" resultType="int">
+		select count(*) 
+		from prepareBoard 
+		where fk_class_seq = #{class_seq} and preStatus = 1
+		<if test='searchWord != ""'>
+			and ${searchType} like '%' || #{searchWord} || '%'
+		</if>
+	</select>
+	
+	<insert id="writePreComment" parameterType="HashMap">
+		insert into prepareComment(preComSeq, fk_class_seq, fk_preSeq, fk_USERNO, preComContent, preComWriteDate,
+								   preComStatus, preComGroupno, fk_preComseq, preComdepthno, preComSecret)
+		values(seq_prepareComment.nextval, #{fk_class_seq}, #{fk_preSeq}, #{userno}, #{preComContent}, default, default, seq_preComGrooupNo.nextval, default, default, #{secret})
+	</insert>
+	
+	<select id="getCommentList" parameterType="HashMap" resultType="com.center.lecture.model.PreCommnetVO">
+		select A.preComSeq, A.fk_class_seq, A.fk_preSeq, A.fk_USERNO, A.USERNAME, A.preComContent, A.preComWriteDate, A.preComStatus, A.preComGroupno, A.fk_preComseq
+		      ,A.preComdepthno, A.preComSecret, B.fk_userno as orginuserno
+		from 
+		(
+			select preComSeq ,fk_class_seq, fk_preSeq, fk_USERNO, USERNAME, preComContent, to_char(preComWriteDate, 'yyyy-mm-dd hh24:mi:ss') as preComWriteDate, preComStatus, preComGroupno, fk_preComseq
+			      ,preComdepthno, preComSecret
+			from prepareComment C JOIN awesome_member M on C.FK_USERNO = M.USERNO
+			where fk_class_seq = #{class_seq} and fk_preSeq = #{preSeq}
+			start with FK_PRECOMSEQ = 0
+			connect by prior PRECOMSEQ = FK_PRECOMSEQ
+			order siblings by PRECOMGROUPNO desc, PRECOMSEQ asc
+		) A 
+		LEFT JOIN 
+		(
+			select precomseq, fk_userno
+			from prepareComment
+		) B
+		ON A.fk_preComseq = B.precomseq
+	</select>
+	
+	<update id="preCountComment">
+		update prepareBoard set PRECOMMENTCOUNT = PRECOMMENTCOUNT + 1 where FK_CLASS_SEQ = #{fk_class_seq} and PRESEQ = #{fk_preSeq}
+	</update>
+	
+	<insert id="writePreReply">
+		insert into prepareComment(preComSeq, fk_class_seq, fk_preSeq, fk_USERNO, preComContent, preComWriteDate,
+								   preComStatus, preComGroupno, fk_preComseq, preComdepthno, preComSecret)
+		values(seq_prepareComment.nextval, #{fk_class_seq}, #{fk_preSeq}, #{userno}, #{preComContent}, default, default, #{preComGroupno}, #{preComSeq}, #{preComdepthno}+1, #{secret})
+	</insert>
+	
+	<update id="simpleLock" parameterType="HashMap">
+		update prepareComment set preComSecret = #{preComSecret}
+		where fk_class_seq = #{fk_class_seq} and fk_preSeq = #{fk_preSeq} and preComSeq = #{preComSeq}
+	</update>
+	
+	<update id="editPreReply" parameterType="HashMap">
+		update prepareComment set
+		preComContent = #{preComContent}
+		,preComWriteDate = sysdate
+		,preComSecret = #{preComSecret}
+		where fk_class_seq = #{fk_class_seq} and fk_preSeq = #{fk_preSeq} and preComSeq = #{preComSeq}
+	</update>
+	
+	<update id="deletePreReply" parameterType="String">
+		update prepareComment set PRECOMSTATUS = 0
+		where preComSeq = #{preComSeq}
+	</update>
+	
+	<select id="chkforDel" parameterType="String" resultType="int">
+		select count(*)
+		from prepareComment
+		where FK_PRECOMSEQ = #{preComSeq}
+	</select>
+	
+	<delete id="purgePreReply" parameterType="String">
+		delete from prepareComment where preComSeq = #{preComSeq}
+	</delete>
+	
+	<select id="getOriginNo" parameterType="String" resultType="String">
+		select FK_PRECOMSEQ 
+		from prepareComment
+		where preComSeq = #{preComSeq}
+	</select>
+	
+	<select id="chkforStat" parameterType="String" resultType="int">
+		select count(*)
+		from prepareComment
+		where PRECOMSEQ = #{originno} and PRECOMSTATUS = 1
+	</select>
+	
+	<update id="reduceReplyCount" parameterType="String">
+		update prepareBoard set PRECOMMENTCOUNT = PRECOMMENTCOUNT -1 where PRESEQ = #{fk_preSeq}
+	</update>
+	
+	<!-- /////////////////////////////////////////////////////////// -->
+	<!-- ///////////////////// 승헌 MAPPER ////////////////////////// -->
+	<!-- /////////////////////////////////////////////////////////// -->
+
+	<resultMap type="HashMap" id="cateMap">
+		<result property="cate_no" column="cate_no" javaType="String" />
+		<result property="cate_code" column="cate_code" javaType="String" />
+		<result property="cate_name" column="cate_name" javaType="String" />
+	</resultMap>
+	
+	<!-- 수강신청 검색할때 대분류별로 카테고리 가져오기 -->
+	<select id="getLecCate" parameterType="String" resultMap="cateMap">
+		select cate_no, cate_code, cate_name
+		from lec_category
+		where cate_code = #{cate_code}
+	</select>
+	
+	
+	<!-- 검색해서 강좌리스트 뽑아오기 (맵) -->
+	<resultMap type="HashMap" id="lectureMap">
+		<result property="class_seq" column="class_seq" javaType="String" /> 
+		<result property="class_status" column="class_status" javaType="String" />
+		<result property="cate_code" column="cate_code" javaType="String" />
+		<result property="cate_name" column="cate_name" javaType="String" />
+		<result property="class_title" column="class_title" javaType="String" />
+		<result property="teacher_name" column="teacher_name" javaType="String" />
+		<result property="class_semester" column="class_semester" javaType="String" />
+		<result property="class_term" column="class_term" javaType="String" />
+		<result property="class_day" column="class_day" javaType="String" />
+		<result property="class_time" column="class_time" javaType="String" />
+		<result property="class_status" column="class_status" javaType="String" />
+	</resultMap>
+	
+	<!-- 검색해서 강좌리스트 뽑아오기 (select)-->
+	<select id="getSearchList" parameterType="HashMap" resultMap="lectureMap">
+		SELECT J.RNO,J.class_seq, J.class_status, J.cate_code, J.cate_name
+			 , J.class_title, T.teacher_name, J.class_semester, J.class_term
+			 , J.class_day, J.class_time, J.class_status
+		FROM
+		    (SELECT row_number() over(order by C.class_startdate desc) as RNO
+		    	  , L.cate_name, L.cate_code, C.class_seq, C.class_title
+		    	  ,C.fk_teacher_seq, C.class_semester, C.class_startdate ||'~' || C.class_enddate class_term
+		    	  , C.class_day, C.class_time, C.class_status
+		            FROM tbl_class C JOIN lec_category L 
+		            ON L.cate_no = C.fk_cate_no
+		     <if test="searchWord != null and searchWord != ''">
+				 where C.class_title like '%' || #{searchWord} ||'%'
+			 </if>
+			 <if test="reSearch == on and searchWord2 != null and searchWord != null">
+				 and C.class_title like '%' || #{searchWord2} ||'%'
+			 </if>       
+			 )J 
+		     JOIN tbl_teacher T
+		     ON T.teacher_seq = J.fk_teacher_seq
+		     where RNO between #{firstPage} and #{lastPage}
+	</select>
+	
+	<!-- 통합검색 할때 총 갯수 구하기 -->
+	<select id="totalCount" parameterType="HashMap" resultType="int">
+		SELECT count(*) as totalCount
+		FROM tbl_class C 
+		<if test="searchWord != null and searchWord != ''">
+			 where C.class_title like '%' || #{searchWord} ||'%'
+		</if>
+		<if test="reSearch == on and searchWord2 != null and searchWord != null">
+			 and C.class_title like '%' || #{searchWord2} ||'%'
+		</if>  
+	</select>
+	
+	
+	<!-- 카테고리 별 랜덤 강좌 불러오기(추천강좌) -->
+	<select id="getWishList" parameterType="String" resultType="String">
+		select cate_no_fk
+		from wishcategory W JOIN awesome_Member M 
+		ON W.userno_fk = M.userno
+		where userid = #{ userid }
+	</select>
+	
+	<!-- 강좌 추천을 위한 관심분야 리스트 가져오기 -->
+	<select id="getRandomLec" parameterType="HashMap" resultType="com.center.lecture.model.LectureVO">
+		select rownum AS RNO, C.class_seq, C.fk_cate_no, L.cate_name, L.cate_code, C.fk_teacher_seq, T.teacher_name, C.class_title, C.class_semester,
+             C.class_fee, C.class_day, C.class_time, C.class_photo, C.class_status
+	    from tbl_teacher T JOIN tbl_class C on C.fk_teacher_seq = T.teacher_seq
+	         JOIN lec_category L on L.cate_no = C.fk_cate_no
+	    where rownum &lt;= 12 and C.fk_cate_no in 
+	      <foreach collection="wishArr" index="i" open="(" close=")" separator=",">
+	         ${ wishArr[i] }
+	      </foreach>
+	    and c.class_status = 1
+	    order by DBMS_RANDOM.RANDOM
+	</select>
+	
+	<!-- // 인기강좌(order by class_heart) -->
+	<select id="populLec" resultType="com.center.lecture.model.LectureVO">
+		select RNO, class_seq, fk_cate_no, cate_name, cate_code, fk_teacher_seq, teacher_name, class_title, class_semester
+		     , class_fee, class_day, class_time, class_photo, class_status, class_heart
+		from
+		(
+		    select ROW_NUMBER() OVER (ORDER BY class_heart desc) as RNO, C.class_seq, C.fk_cate_no, L.cate_name, L.cate_code
+		         , C.fk_teacher_seq, T.teacher_name, C.class_title, C.class_semester
+		         , C.class_fee, C.class_day, C.class_time, C.class_photo, C.class_status, class_heart
+		    from tbl_teacher T JOIN tbl_class C on C.fk_teacher_seq = T.teacher_seq
+		                       JOIN lec_category L on L.cate_no = C.fk_cate_no
+		    where class_status = 1                   
+		)V
+		where RNO &lt;= 12
+	</select>
+	
+	
+	<!-- >> 차트 << ResultMap -->
+	<resultMap type="HashMap" id="chartMap">
+		<result column="fk_cate_no" property="fk_cate_no" javaType="String"/>
+		<result column="cate_name" property="cate_name" javaType="String"/>
+		<result column="sumHeart" property="sumHeart" javaType="String"/>
+		<result column="cnt" property="cnt" javaType="String"/>
+		<result column="percentage" property="percentage" javaType="String"/>
+		
+		<result column="class_seq" property="class_seq" javaType="String"/>
+		<result column="class_title" property="class_title" javaType="String"/>
+		<result column="class_heart" property="class_heart" javaType="String"/>
+	</resultMap>
+	
+	<!-- >> 차트 << 카테고리 별로 하트 점유율 가져오기 -->
+	<select id="cate_heart" resultMap="chartMap" >
+		SELECT fk_cate_no, cate_name, SUM(class_heart) as sumHeart
+		      ,count(*) cnt
+		      , round(SUM(class_heart) / ( SELECT SUM(class_heart) FROM tbl_class ) * 100,2) percentage
+		FROM tbl_class C JOIN LEC_CATEGORY L ON fk_cate_no = cate_no
+		GROUP BY fk_cate_no, cate_name
+		ORDER BY fk_cate_no
+	</select>
+	
+	<select id="class_heart" parameterType="String" resultMap="chartMap">
+		select RNO, fk_cate_no, class_seq, class_title, class_heart, round(nvl(class_heart/decode(rad,0,null,rad), 0)*100,2) as percentage
+		from
+		(
+		    select ROW_NUMBER() OVER (ORDER BY class_heart desc) as RNO, fk_cate_no, class_seq, class_title, class_heart
+		         , (select sum(class_heart) from tbl_class where class_status = 1 and fk_cate_no = #{ fk_cate_no }) rad
+		    from tbl_class
+		    where class_status = 1 and fk_cate_no = #{ fk_cate_no }
+		)V
+		where RNO &lt;= 6
+	</select>
+	
+</mapper>

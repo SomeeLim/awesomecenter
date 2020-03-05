@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+   #payment_body {
+      font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+   }
+
+	#payment_div {
+	
+		width : 85%;
+		margin : 0 auto;
+	
+	}
+	
+	
+	#pay_nvar div {
+		display: inline-block;
+		font-size: 14px;
+		margin: 2px 12px 0;
+		color : #666;
+		font-weight: 400;
+	}
+	
+			
+	#pay_nvar img {
+		
+	    position: relative;
+	    top: 1.5px;
+	    width: 16px;
+	    height: 15px;
+	}
+	
+	#pay_nvar a {
+	
+		font-size: 14px;
+	    color: #666;
+	    font-weight: 400;
+	    text-decoration: none;
+	
+	}
+
+	#pay_h2 h2 {
+	
+		font-weight: 500;
+		font-size: 52px;
+		margin-bottom: 70px;
+		letter-spacing: -3px;
+		font-family: "Noto Sans Kr";
+	
+	}
+	
+	#pay_div {
+	
+		margin : 50px 0; 
+	
+	}
+	
+	
+	#pay_Tbl {
+	
+		border-top: black 1px solid;
+		border-bottom: 1px solid #e5e5e5;
+		width : 90%;
+		margin: 0 auto;
+		border-collapse: collapse;
+		margin-bottom: 50px;
+	}
+	
+	
+	#pay_Tbl tr th{
+	
+		    font-size: 16px;
+		    color: #222;
+		    text-align: center;
+		    padding: 11px 5px 10px 5px;
+		    background-color: #f4f4f4;
+		    height: 66px;
+		    font-weight: normal;
+	}
+	
+	
+	#pay_Tbl tr td{
+	
+		text-align: center;
+		padding: 11px 5px 10px 5px;
+		height: 150px;
+		color: #666;
+		border-bottom: 1px solid #e5e5e5;
+		
+		
+	}
+	
+	.lectureName {
+	
+		font-size: 16px;
+		color: #222;
+		font-weight: 500;
+		line-height: 22px;
+	
+	}
+	
+	.lectureEtc {
+	
+		font-size: 14px;
+    	color: #999;
+		margin-right: 10px;
+	}
+
+	#totalPrice {
+	
+		font-size: 26px;
+		color : #e12a29;
+   		font-weight: 700;
+		
+	}
+	
+	div#totalPriceDiv{
+	
+		text-align: right;
+		width : 90%;
+		margin: 0 auto;
+	
+	}
+	
+	div#payBtn {
+	
+	    background: #eb2d2f;
+        height: 66px;
+        line-height : 66px;
+        width: 220px;
+	    font-size: 20px;
+	    padding: 0 30px;
+	    color : white;
+	    
+	    cursor : pointer;
+		    
+	}
+	
+	#logoDiv {
+		
+		display : inline-block;
+		width: 137px;
+    	height: 137px;
+    	float: left;
+    	background: url(/awesomecenter/resources/images/paymentLotte.PNG) no-repeat 0 bottom;
+    	margin-right: 20px;
+	}
+	
+	#msgDiv {
+		
+		display : inline-block;
+		width : auto;
+		vertical-align: text-top;
+		float: left;
+	}
+	
+	#firstMsg {
+	
+	    font-size: 28px;
+	 /*   color: #000;
+	     font-family: 'Noto Sans KR'; */
+	    font-weight: 500;
+	
+	}
+	
+	#secondMsg {
+	
+		font-size: 16px;
+	    color: #999;
+	 /*    margin-top: 20px; */
+	}
+	
+	/* totalTbl */
+	#totalTbl {
+	
+    	border: 1px solid #ccc;
+    	width : 90%;
+		margin: 0 auto;
+		border-collapse: collapse;
+		
+		height: 80px;
+	}
+	
+	#totalTbl tr th{
+	
+		    font-size: 16px;
+		    color: #222;
+		    text-align: center;
+		    padding: 11px 5px 10px 5px;
+		    background-color: #f4f4f4;
+		    font-weight: 500;
+		    border-right: 1px solid #e5e5e5;
+	}
+	
+	
+	#totalTbl tr td{
+	
+		text-align: center;
+		padding: 11px 5px 10px 5px;
+		color: #666;
+		border-right: 1px solid #e5e5e5;
+		
+		
+	}
+	 
+	
+	#tbl_caption {
+		
+		width : 90%;
+		margin : 0 auto;
+	}
+	
+	#tbl_caption p {   
+	
+	 	font-size: 14px;
+	    color: #999;
+	
+	}
+	
+	/* Btn */
+	#otherLecBtn {
+	
+		display : inline-block;		
+		height: 66px;
+	    line-height: 66px;
+	    font-size: 20px;
+	    width: 220px;
+        background: white;
+	    border: 1px solid #aaa;
+	    color: #222;
+	    margin-right: 8px;
+	    cursor : pointer;
+	}
+	
+	#myLecListBtn {
+	
+		display : inline-block;
+		height: 66px;
+	    line-height: 66px;
+	    font-size: 20px;
+	    width: 220px;
+        background: black;
+	    border: 1px solid #aaa;
+	    color: white;
+	    cursor : pointer;
+	}

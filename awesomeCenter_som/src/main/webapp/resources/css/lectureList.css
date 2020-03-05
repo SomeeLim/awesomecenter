@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+/* ======================================================================================= */
+/* 메뉴바  */
+
+#content_kdh h2 {
+    font-size: 52px;
+    color: #000;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 0;
+}
+
+/* ======================================================================================= */
+/* 검색select  */
+
+.lectureList_kdh .search_kdh {
+    padding: 20px 30px;
+    background: #f4f4f4;
+    margin-bottom: 20px;
+    font-size: 0;
+    table-layout: fixed;
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+
+.lectureList_kdh .option_kdh {
+    font-size: 16px;
+    color: #666;
+    height: 50px;
+}
+
+.option_kdh {
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    background: #fff;
+    color: #222;
+    font-size: 13px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+}
+
+.select_kdh:after {
+    display: block;
+    top: 50%;
+    width: 15px;
+    height: 10px;
+    background: url(/awesomecenter/resources/dhimages/icon/셀렉트.png) no-repeat;
+    background-size: 10px 6px;
+    content: '';
+    margin-top: -25px;
+    margin-right: 10px;
+    position: relative;
+	float: right;
+}
+
+td .btn_kdh {
+	padding: 5px 0;
+	border-radius: 10px;
+	line-height: 30px;
+	height: 30px;
+}
+
+.btn_kdh {
+    padding: 0 30px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+/* ======================================================================================= */
+/* 공지  */
+.lectureList_kdh .noticeArea_kdh {
+    margin-top: 30px;
+}
+
+.noticeArea_kdh {
+    padding: 30px;
+    position: relative;
+    background: #f4f4f4;
+    margin-bottom: 20px;
+}
+
+.lectureList_kdh .noticeArea_kdh .txtRed_kdh {
+    color: #e12a29;
+}
+.noticeArea_kdh ul li:first-child {
+    margin-top: 0;
+}
+
+.noticeArea_kdh ul li {
+    margin: 5px 0 0 0;
+    position: relative;
+    padding-left: 8px;
+    color: #999;
+    font-size: 18px;
+}
+
+.noticeArea_kdh ul li:after {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    display: block;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #999;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.lectureList_kdh .noticeArea_kdh .txtRed_kdh:after {
+    background: #e12a29;
+}
+
+.olulli {
+	padding: 0;
+}

@@ -1,0 +1,436 @@
+@charset "UTF-8";
+
+
+
+	@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+	@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+	@import "sprites.less";
+	@import "path/to/font-awesome/less/font-awesome.less";
+	@FontAwesomePath:   "../font";
+
+   div#lecture_body {
+      font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+      
+   }
+   
+   div#lecture_body a {
+      
+      text-decoration: none;
+      
+   }
+
+	#lectureList {
+		width : 85%;
+		margin : 0 auto;
+	}
+	
+	#lecture_nvar div {
+		display: inline-block;
+		font-size: 14px;
+		margin: 2px 12px 0;
+		color : #666;
+		font-weight: 400;
+	}
+
+	#lecture_h2 h2 {
+		font-weight: 500;
+		font-size: 52px;
+		margin-bottom: 70px;
+		letter-spacing: -3px;
+		font-family: "Noto Sans Kr";
+	}
+	
+	#lecture_menu ul{
+	
+		padding-inline-start: 0 !important;
+		list-style: none;
+	    margin: 0 auto;
+	    padding: 0;
+	    
+	    width : 85%;
+		
+	}
+	
+	#lecture_menu ul li{
+	
+		display: inline-block;
+		width: 24.5%;
+		margin : 0;
+		padding : 0;
+	    
+	}
+	
+	#lecture_menu ul li a{
+	
+	    position: relative;
+	    display: block;
+	    height: 50px;
+	    font-size: 26px;
+	    color: #999;
+	    vertical-align: top;
+	    font-weight: 500;
+	    text-align: center;
+	    
+	}
+	
+	
+	#lecture_menu ul li {
+		float : left;
+	}
+	
+	.action {
+	
+		border-bottom: 5px solid #e12a29;
+		color : #222 !important;
+		
+	}
+	
+	#realList {
+	
+		clear: both;
+		background: #f4f4f4;
+		padding-top: 30px;
+	
+	}
+	
+	#realList div#searchLec {
+	
+		margin : 0 auto;
+		width : 85%;
+		margin-bottom: 30px;
+		margin-top: 30px;
+	
+	}
+
+	
+	table {
+	
+		margin : 0 auto;
+		width : 85%;
+		margin-bottom: 30px;
+		table-layout: fixed;
+	}
+	 
+	 table td{
+		 background: #e4e1df;
+		 table-layout: fixed;
+	 }
+	
+	#searchUL {
+	
+	 	list-style: none; 
+	 	margin: 0 auto; 
+	 	line-height: 300%;
+	 	/*margin-left: 100px;*/
+	 	width: 70%;
+	
+	}
+/* 	
+	#realList form select{
+	
+		color : #605752;
+		height : 30px;
+		width : 160px;
+	}
+	 */
+	#searchLecFrm input{
+	
+		color : #605752;
+	}
+	
+	.tnrkdeotkd {
+	
+		position: relative;
+	    display: inline-block;
+	    width: 100%;
+	    padding: 0 20px;
+	    height: 70px;
+	    background: #e4e1df;
+	    font-size: 18px;
+	    color: #222;
+	    line-height: 70px;
+	    text-align: left;	
+	    border : hidden;
+	
+	}
+	
+	.tnrkdeotkdinput {
+		
+	    height: 70px;
+	    border: none;
+	    padding: 0 20px;
+	    line-height: 70px;
+	    font-size: 18px;
+	    color: #222;
+	    border-radius: 0;
+	    background: #e4e1df;
+	    width: 600px;
+	}
+	
+	.searchbbbb{
+		
+		text-align : center;
+		/* margin: 0 auto; */
+	 	color : white;
+	 	background: black;
+	 	width : 80px;
+	
+	}
+	
+	#cancelBtn {
+	
+	   float: right;
+	   position: relative;
+	   top: 25px;
+	   font-size: larger;
+	   color: #ccc;
+	   border-style: none;
+	   background: #e5e1df;
+	}
+	
+	/* 강좌 리스트 css */
+	
+	#listLec {
+		width: 72%;
+		margin: 0 auto;
+		color: rgb(180,180,180);
+		font-size: 11pt;
+		margin-top: 10px;
+		
+	}
+	
+	#pictureList ul {
+		list-style-type: none;
+		margin: 15px 0 0 -34px !important;
+		width:100%; 
+		position:relative;
+	}
+	
+	.lecListPic {
+		width: 272px;
+		height: 272px;
+		margin-bottom: -5px;
+		
+	}
+	
+	#pictureList {
+		padding-bottom: 20px;
+	}
+	
+	.detailInfoSpan {
+		color: rgb(148,148,148);
+	}
+	
+	#pictureList li:hover {
+		text-decoration: none;
+		color: rgb(148,148,148);
+	}
+	
+	#pictureList ul li {
+		width: 272px;
+		height: 430px;
+		float: left;
+		position:relative; 
+		height:100%; 
+		width:25%;
+		margin-bottom: 35px;
+		cursor: pointer;
+	}
+	
+	#pictureList ul:after {
+	    display: block;
+	    content: "";
+	    clear: both;
+	    height: 1px;
+	}
+	
+	.prodItem {
+		background-color: white;
+		width: 272px;
+		height: 430px;
+	}
+	
+	#thum {
+		margin-bottom: -6px;
+	}
+	
+	.onApply {
+		display:inline-block;
+		background-color: rgb(221, 38, 50);
+		color: white;
+		padding: 5px 0;
+		text-align: center;
+		width: 85px;
+		
+	}
+	
+	.onWait {
+		display:inline-block;
+		background-color: rgb(253, 110, 45);
+		color: white;
+		padding: 5px 0;
+		text-align: center;
+		width: 85px;
+	}
+	
+	.closeApply {
+		display:inline-block;
+		background-color: rgb(119, 119, 119);
+		color: white;
+		padding: 5px 0;
+		text-align: center;
+		width: 85px;
+	}
+	
+	.detailAge {
+		display:inline-block;
+		background-color: black;
+		color: white;
+		padding: 5px 0;
+		text-align: center;
+		width: 79px;
+	}
+	
+	.detailCat {
+		display:inline-block;
+		color: black;
+		border: solid black 1px;
+		padding: 4px 0;
+		text-align: center;
+		width: 106px;
+	}
+	
+	#lecTitle {
+		font-size: 15pt;
+		line-height: 150%;
+		font-weight: bold;
+		color: black;
+	}
+	
+	#lecDetailInfo {
+		padding: 3px 12px;
+		font-size: 9pt;
+	}
+	
+	.lecTitleDIV {
+		height: 60px; 
+		padding: 0 12px; 
+		margin-top: 8px;
+	}
+	
+	.pagination {
+		display: inline-block;
+		width: 1100px;		
+		margin: 0 auto;
+		padding-bottom: 50px;
+		text-align: center;
+	}
+	
+	.pagebar-btn {
+		margin-bottom: -11px;
+		width: 47px;
+		height: 38px;
+		opacity: 60%;
+	}
+	
+	.pagebar-number {
+		color: rgb(62,62,62);
+		font-size: 12pt;
+	}
+	
+	.pagebar-number:hover {
+		text-decoration: none;
+		color: rgb(62,62,62);		
+	}
+	
+
+	.filterList {
+		color: rgb(71,71,71) !important;
+		font-weight: bold !important;
+	} 
+
+	  #guide_nvar {
+   
+      margin : 0 auto;
+      width : 90%;
+   }
+
+   #guide_nvar div {
+      display: inline-block;
+      font-size: 14px;
+      margin: 2px 12px 0;
+      color : #666;
+      font-weight: 400;
+   }
+   
+         
+   #guide_nvar img {
+      
+       position: relative;
+       top: -2px;
+       width: 16px;
+       height: 15px;
+   }
+   
+   #lecture_nvar img {
+	
+    position: relative;
+    top: -2.5px;
+    width: 16px;
+    height: 15px;
+	}
+   
+   #guide_nvar a {
+   
+      font-size: 14px;
+       color: #666;
+       font-weight: 400;
+       text-decoration: none;
+   
+   }
+   
+   #lecture_nvar a {
+
+		font-size: 14px;
+	    color: #666;
+	    font-weight: 400;
+	    text-decoration: none;
+
+	}
+   
+   #lecture_nvar a {
+
+	font-size: 14px;
+    color: #666;
+    font-weight: 400;
+    text-decoration: none;
+
+	}
+	
+	#lecture_nvar div {
+	   display: inline-block;
+	   font-size: 14px;
+	   margin: 2px 12px 0;
+	   color : #666;
+	   font-weight: 400;
+	}
+	
+	      
+	#lecture_nvar img {
+	   
+	    position: relative;
+	    top: -2.5px;
+	    width: 16px;
+	    height: 15px;
+	}
+	
+	#lecture_nvar a {
+	
+	   font-size: 14px;
+	    color: #666;
+	    font-weight: 400;
+	    text-decoration: none;
+	
+	}
+   
+

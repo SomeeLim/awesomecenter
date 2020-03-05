@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+    @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+	
+	 #board_body {
+      font-family: "Noto Sans Kr", Nanum Gothic, "나눔고딕", sans-serif;
+  	 }
+
+   #board_div {
+      width : 85%;
+      margin : 0 auto;
+   }
+   
+   #board_nvar div {
+      display: inline-block;
+      font-size: 14px;
+      margin: 2px 12px 0;
+      color : #666;
+      font-weight: 400;
+   }
+	
+			
+	#board_nvar img {
+		
+	    position: relative;
+	    top: -2px;
+	    width: 16px;
+	    height: 15px;
+	}
+	
+	#board_nvar a {
+	
+		font-size: 14px;
+	    color: #666;
+	    font-weight: 400;
+	    text-decoration: none;
+	
+	}
+
+   #board_h2 h2 {
+      font-weight: 500;
+      font-size: 50px;
+      margin-bottom: 70px;
+      letter-spacing: -3px;
+      font-family: "Noto Sans Kr";
+   }
+   
+	.boardTbl {
+		margin: 0 auto;
+		margin-top: 70px;
+	    padding: 0;
+	    border-top: solid 1.5px black;
+	    width: 75%;
+	    font-size: 12px;
+	    line-height: normal;
+	    vertical-align: baseline;
+	    border-collapse: collapse;
+	}
+	
+	.boardTbl tr th {
+	    width: 120px;
+	    padding: 10px 0 10px 30px;
+	    border-bottom: 1px solid #d7d7d7;
+	    color: #181818;
+	    font-weight: normal;
+	    font-size : 14px;
+	    text-align: left;
+	    vertical-align: middle;
+	    border-collapse: collapse;
+	    
+	}
+	
+	.boardTbl tr td {
+	    padding: 10px 0 10px 10px;
+	    border-bottom: 1px solid #d7d7d7;
+	    color: #837d81;
+	    text-align: left;
+	    vertical-align: middle;
+	    font-size : 13px;
+	}
+	
+	#boardTbl_cat {	
+	    display: inline-block;
+	    font-size: 14px;
+	    color: #222;
+	    font-weight: 400;
+	    vertical-align: middle;
+	    padding-right: 15px;
+	    margin-top: -1px;
+	}
+	
+	#boardTbl_title {
+		font-size: 22px;
+	    color: #222;
+	    font-weight: bold;
+	    vertical-align: middle;
+	}
+	
+	#boardTbl_date {
+		color:#999999;
+		font-size: 12pt;
+		font-weight: bold;
+	}
+	
+	.board_contents {
+		margin: 0px auto;
+		min-height: 500px;
+		width: 75%;
+		border-bottom: 1px solid #d7d7d7;
+	}
+	
+	#content {
+		float: left;
+		width: 70%;
+		margin: 30px 40px;
+	}
+	
+	.btn_cover {
+		margin: 20px auto;
+		width: 75%;
+		text-align: right;
+	}
+	.btn_cover div {
+		 display: inline-block;
+	}
+	
+	.btn {
+	    display: inline-block;
+	    width: 100px;
+	    height: 60px;
+	    padding: 13px 0;
+	    border: 1px solid #aaa;
+	    color: #222;
+	    font-size: 22px;
+	    font-weight: bold;
+	    text-align: center;
+	    cursor: pointer;
+	    border-radius: 2px;
+	}
+	
+	.editBtn {
+		border: 1px solid black;
+		background: black;
+	    color : white;
+	    margin-right: 0px;
+	
+	}
+	
+	.deleteBtn {
+		border: 1px solid #eb2d2f;
+	    background: #eb2d2f;
+	    color : white;
+		    
+	    margin-left: 8px;
+	}
+	
+/*	/////////////////////////////////	*/
+
+	#reviewImg {
+		margin-top : 20px;
+		padding-left: 20px;
+	}
+	
+	#reviewImg img {
+	
+		width : 500px;
+		height : 300px;
+	}
+
+	/* ///////////////////// */
+	#commentDiv {
+	
+		margin : 0 auto;
+		width : 75%;
+		
+	
+	}
+	
+	#comment {
+	
+		width : 100%;
+	}
+	
+	
+	#commentBtn {
+	
+		float : right;
+		border-radius : 2px;
+		height: 40px;
+	    width: 8%;
+	    border-style: none;
+	    background-color: #9d897b;
+	    color: white;
+	    font-size: 14px;
+	    padding: 0 10px;
+		cursor : pointer;
+	}
+
+	
+	/*  //////////////////////// */
+	/*  댓글 리스트 */
+	#commentList {
+	
+		border-top : solid 1px #222;
+		margin : 0 auto;
+		width : 75%;
+		list-style-type: none;
+		margin-bottom: 50px;
+		padding-inline-start: 0px !important;
+		
+	}
+	
+	#commentList li {
+		padding : 14px 30px 30px 50px;
+   		border-bottom: 1px solid #e5e5e5;
+	}
+
+
+	.comment {
+	
+		margin-top : 20px;
+		font-size: 16px;
+   		color: #666;
+	}
+	
+	.name {
+	    font-size: 14px;
+    	color: #222;
+    	border-right: 1px solid #e5e5e5;
+    	padding-right: 10px;
+    	margin-right: 5px;
+	}
+	
+	.date {
+		font-size: 14px;
+    	color: #999;
+	}
+	
+	.deleteComm {
+		
+		height : 22px;
+		width : 22px;
+		padding : 3px 10px;
+		border-radius : 100px;
+		background: #f4f4f4;
+	    color: #999;
+	    font-size: 15px;
+	    position: relative;
+	    bottom : 20px;
+	    left : 82%; 
+		
+	}
+	
+	#rename {
+	
+		color : #999;
+		display: block;
+		margin-bottom: 10px;
+	}
+	
+	#rename input {
+		color : #999;
+		border-style: none;
+	}
+	
+	/* /////////////////////////// */
+	#warring {
+	
+		clear : both;
+		margin : 0 auto;
+		width : 75%;
+		padding: 20px;
+		background: #f4f4f4;
+		margin-top : 90px;
+	}
+	
+	#warring ul li {
+	
+		margin-bottom : 10px;
+	    color: #999;
+    	font-size: 16px;
+	}

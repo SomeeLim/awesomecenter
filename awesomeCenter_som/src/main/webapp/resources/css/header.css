@@ -1,0 +1,385 @@
+@charset "UTF-8";
+@import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* HEADER CSS */
+#header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    min-width: 1160px;
+    width: 100%;
+    background: #fff;
+    height: 95px;
+    border-bottom: 1px solid #ccc;
+    z-index: 100;
+}
+
+#myheader .overlay{
+	box-shadow: rgba(0,0,0,0.5) 0 0 0 9999px;
+    z-index: 100;
+}
+
+#header .logo a {
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    background: url(/awesomecenter/resources/hmimages/logo.png) no-repeat left top;
+    background-size: 200px;
+    position: relative;
+    top: 14px;
+}
+
+#header h1.logo{
+	margin: 13.4px 60px 13.4px 0;
+}
+
+#header .headerArea {
+    width: 1350px;
+    margin: 0 auto;
+    padding: 32px 90px 0; /* 주메뉴 위치값: 빨간줄 안맞을때 조정 */
+    height: 95px;
+    position: relative;
+}
+
+#header .logo {
+    float: left;
+    margin-right: 60px;
+    font-size: 15pt;
+    position: relative;
+    z-index: 10;
+    bottom: 25px; /* 로고 사이즈위치 */
+}
+
+#header .headerArea:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.bodyDim #header:after{
+	content: '';
+	position: absolute;
+	top:94px;
+	left: 0;
+	right: 0;
+	height: 400px;
+	z-index: -1;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+}
+
+#header .blind {
+    position: absolute !important;
+    left: -9999em;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    text-indent: -9999em;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+
+#header #gnb {
+    margin-top: 3px;
+    position: relative;
+}
+
+#header ol,#header ul,#header li {
+	margin-top: 5px;
+    list-style: none;
+}
+
+#header #gnb > ul > li:first-child {
+    margin-left: 0px;
+}
+
+#header #gnb > ul > li {
+    float: left;
+    width: 190px;
+    position: relative;
+}
+
+#header #gnb > ul > li:last-child .depth2:last-child {
+    border-right: 1px solid #e5e5e5;
+}
+
+#header #gnb > ul > li > a {
+    display: inline-block;
+    padding: 0 0 0 20px;
+    font-size: 18px;
+    font-family: 'Noto Sans KR', 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+#header #gnb > ul .depth2 {
+    display: none;
+    /* width: 350px; */
+    padding: 25px 0 0 25px;
+    border-left: 1px solid #e5e5e5;
+    height: 377px;
+}
+
+#header #gnb > ul .admin#no_lecturer {
+    width: 350px;
+}
+
+#header #gnb > ul > li:last-child .depth2 > li {
+    float: left;
+    margin: 0 0 0 0;
+    width: 150px;
+}
+
+#header #gnb > ul .depth2 > li:first-child {
+    margin-top: 0px;
+}
+
+#header #gnb > ul > li:last-child .depth2 > li:first-child {
+    margin-right: 30px;
+}
+
+
+#header #gnb > ul .depth2 > li > a {
+    font-size: 16px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: #666666;
+}
+
+#header #gnb > ul .depth3 {
+    margin-top: 10px;
+    padding: 0 0 0 10px;
+}
+
+#header #gnb > ul .depth3 li:first-child {
+    margin-top: 0px;
+}
+
+#header #gnb > ul > li:last-child > ul.no_lecturer > li:last-child {
+    margin-top: 0!important;
+}
+
+#header #gnb > ul .depth3 li a {
+    font-size: 14px;
+    color: #999;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+}
+
+#header #gnb > ul .depth2 li span.adminMenu {
+    font-size: 16px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+    letter-spacing: -1px;
+    color: red;
+    font-weight: bold;
+}
+
+
+#header #gnb > ul:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+#header #gnb > ul .on {
+    border-top: 3px solid #e12a29;
+}
+
+#header #gnb > ul .onlast{
+ 	border-top: solid 3px #e12a29; 
+}
+
+#header a.hm_a:link,
+#header a.hm_a:visited,
+#header a.hm_a:hover,
+#header a.hm_a:active,
+#header a.hm_a:focus {
+    text-decoration: none;
+}
+
+#header .depth2 a:hover,
+#header .utilityMenu span:hover,
+#header .utilityMenu .loginMenu a:hover{
+	text-decoration: underline;
+	color: #222222 !important;
+}
+
+#header #dUserCartCount:hover{
+	color: #ffffff !important;
+}
+
+#header .utilityMenu {
+    position: absolute;
+    top: 30px;
+    right: 60px;
+}
+
+#header .utilityMenu > ul > li {
+    float: left;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+#header .utilityMenu > ul > li.ico {
+    margin-left: 20px;
+}
+
+#header .utilityMenu .cart span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    margin: 15px 0 0 18px;
+    font-size: 11px;
+    background-color: black;
+    border-radius: 10px;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+    text-align: center;
+}
+
+#header .utilityMenu .cart em:before {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 0;
+    text-indent: -9999px;
+}
+
+#header .utilityMenu > ul > li > a {
+    margin-top: 7px;
+    display: inline-block;
+    font-size: 13px;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+}
+
+#header .utilityMenu > ul > li > a {
+    color: #222;
+}
+
+#header .utilityMenu > ul > li.hm_utilli:before {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 11px;
+    vertical-align: middle;
+    background: #e0e0e0;
+    margin: 0 8px;
+}
+
+#header .utilityMenu .topSearchArea {
+    overflow: hidden;
+    position: absolute;
+    top: -15px;
+    right: 2px;
+    /* width: 330px; */
+    width: 0px;
+    background: #000;
+    padding: 20px 0;
+    z-index: 100;
+}
+
+#header .utilityMenu .open {
+    width: 330px;
+}
+
+#header .utilityMenu .topSearchArea input[type="text"] {
+    font-size: 18px;
+    background: #000;
+    border: none;
+    color: #ffffff;
+    width: 270px;
+}
+
+#header .utilityMenu .topSearchArea a {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    display: block;
+    width: 23px;
+    height: 24px;
+    margin-top: -18px;
+    background: url(/awesomecenter/resources/hmimages/smallSearch.png) no-repeat 0 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+#header .utilityMenu .cart {
+    width: 32px;
+    height: 32px;
+    background: url(/awesomecenter/resources/hmimages/cart.png) no-repeat left top;
+    margin-top: 0;
+    position: relative;
+    bottom: 7px;
+} 
+
+#header .utilityMenu .search {
+    width: 50px;
+    height: 50px;
+    background: url(/awesomecenter/resources/hmimages/search.png) no-repeat left top;
+    margin-top: 0;
+    position: relative;
+    bottom: 13px;
+} 
+
+#header .utilityMenu .loginMenu {
+    display: none;
+    border: 1px solid #000;
+    padding: 10px 0;
+    position: absolute;
+    width: 151px;
+    background: #fff;
+    top: 34px;
+    left: -20px;
+}
+#header .utilityMenu .loginMenu ul{
+	padding: 0 20px 0 20px;
+}
+
+#header .utilityMenu .loginMenu:before{
+	position: absolute;
+	content: "";
+	width: 16px;
+	height: 15px;
+	background: url(/awesomecenter/resources/hmimages/loginMenu.png) no-repeat left top ;
+	background-size: 16px 15px;
+	top: -11px;
+    left: 55px;
+}
+
+#header .utilityMenu .loginMenu li:first-child {
+    margin-top: 0px;
+}
+
+#header .utilityMenu .loginMenu a {
+    font-size: 14px;
+    color: #999;
+    letter-spacing: -0.025em;
+    font-family: 'Noto Sans KR';
+    font-weight: 400;
+}
+
+#header .utilityMenu .loginMenu li.line {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+
+#header .mainMenu {
+	margin-bottom: 10px;
+}
+
+/* W3 CSS겹치는 부분 */
+#header *, 
+#header *:before,
+#header *:after{
+	box-sizing: content-box !important;
+}

@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+#content_kdh h2 {
+    font-size: 52px;
+    color: #000;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-top: 0;
+}
+
+.noticeArea_kdh {
+    padding: 30px;
+    position: relative;
+    background: #f4f4f4;
+}
+
+.noticeArea_kdh ul {
+	margin: 0;
+	padding: 0;	
+}
+
+.noticeArea_kdh ul li:first-child {
+    margin-top: 0;
+}
+
+.noticeArea_kdh ul li {
+    margin: 5px 0 0 0;
+    position: relative;
+    padding-left: 8px;
+    color: #999;
+    font-size: 18px;
+}
+
+.noticeArea_kdh ul li:after {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    display: block;
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: #999;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+.noticeArea_kdh .btn_kdh {
+    position: absolute;
+    right: 30px;
+    top: 45px;
+    padding: 0 12px;
+}
+
+.noticeArea_kdh .btn_kdh {
+    display: inline-block;
+    padding: 0 30px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tabArea_kdh {
+    width: 100%;
+}
+
+.tabArea_kdh .tab_kdh {
+    display: table;
+    position: relative;
+    table-layout: fixed;
+    width: 1160px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.tabArea_kdh .tab_kdh li {
+    position: relative;
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+}
+
+.tabArea_kdh .tab_kdh li.on_kdh a {
+    position: relative;
+    color: #222;
+    height: 43px;
+}
+
+.tabArea_kdh .tab_kdh li a {
+    position: relative;
+    display: block;
+    height: 43px;
+    border-bottom: 1px solid #d4d4d4;
+    font-size: 20px;
+    color: #999;
+    vertical-align: top;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+}
+
+.tabArea_kdh .tab_kdh li.on_kdh a:before {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: #e12a29;
+}
+
+.tabArea_kdh .tab_kdh li.on_kdh a:after {
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    margin-left: -9px;
+    display: block;
+    content: "";
+    width: 18px;
+    height: 9px;
+    background: url(/LDCS/resources/normal/img/common/bl_tab_on.png) no-repeat left top;
+}
+
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration: none;
+}
+
+.tabArea_kdh .tabContent_kdh {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    background: #fff;
+}
+
+.hm_tbody td {
+	position: relative;
+}
+
+.hm_tbody td a {
+    padding: 5px 60px 5px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    height: 86px;
+}
+
+.hm_tbody td a:hover {
+	color: black;
+}
+
+.hm_tbody tr.question_kdh td:after {	
+    display: block;
+    content: '';
+    background: url(/awesomecenter/resources/dhimages/icon/셀렉트.png) no-repeat 0 0;
+    background-size: 10px 6px;
+    position: absolute;
+    top: 35px;
+    right: 40px;
+    width: 18px;
+    height: 10px;
+}
+
+.hm_tbody tr.question_kdh td a span {
+	float: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.hm_tbody tr.answer_kdh td {
+	padding: 50px 40px;
+	line-height: 25px;	
+	background-color: #f4f4f4;
+}
+
+.hm_tbody tr.answer_kdh td div span {
+	float: left;
+	color: #e12a29;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+
+.hm_tbody tr.answer_kdh td div {
+    font-size: 16px;
+    word-break: keep-all;
+    word-wrap: break-word;
+    color: #666;
+}
+
+.show {
+	display: block;
+}
+
+tr.answer_kdh td {
+	cursor: text !important;
+}

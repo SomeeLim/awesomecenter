@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+#btnArea {
+		float : right;
+}
+
+#registerBtn {
+	border : none;
+  	background: white;
+  	font-size: 12pt;
+  	font-weight: bold;
+  	padding: 6px 10px;
+  	background: black;
+  	color: white;
+}
+
+.title:hover{
+	cursor: pointer;
+	text-decoration: underline;
+	
+}
+
+.pagination {
+	
+	display : block !important;
+   	width: 75%;	
+	margin: 0 auto;
+	margin-top : 25px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+
+.pagebar-btn {
+	margin-bottom: -11px;
+	width: 47px;
+	height: 38px;
+	opacity: 60%;
+}
+
+.pagebar-btn:hover {
+	cursor : pointer;
+}
+
+.pagebar-number {
+	color: rgb(62,62,62);
+	font-size: 12pt;
+    position: relative;
+    top: 6px;
+    left: 2px;
+}
+
+.pagebar-number:hover {
+	text-decoration: none;
+	color: rgb(62,62,62);		
+	
+	cursor : pointer;
+}
+
+.action2 {
+	
+		font-weight: bold !important;
+		text-decoration: underline !important;
+}
